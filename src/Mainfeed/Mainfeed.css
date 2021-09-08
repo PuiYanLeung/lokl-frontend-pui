@@ -1,0 +1,13 @@
+body {
+    margin: 0; 
+ }
+
+ .Mainfeed {
+    background-color:#BEE2EB;
+     margin: 10%;
+    display:flex;
+    padding: 100px;
+    
+    justify-content: space-between;
+    border-radius: 15%;
+ }

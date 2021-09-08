@@ -1,17 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
 
-const App = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          LOKL is coming soon!
-        </p>
-      </header>
-    </div>
-  );
+import './App.css';
+import Mainfeed from './Mainfeed/Mainfeed';
+import Navbar from './Navbar/Navbar';
+function App() {
+  return < Navbar/>
+
 }
 
+function Appone() {
+   return < Mainfeed/>
+}
 export default App;
+export {Appone} ;
