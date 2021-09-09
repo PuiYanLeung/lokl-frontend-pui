@@ -5,14 +5,18 @@ import Profile from "./Navbarcomponents/Profile.png"
 import Post from "./Navbarcomponents/Post.png"
 import Logout from "./Navbarcomponents/Logout.png"
 
-
+const City = (props) => {
+    return (
+        <p> I am dynamic and will display {props.city}</p>
+    )
+}
 export default function Navbar() {
     return (
         <div className="Navbar">
-            <div className="Logo-left">
+            <div className="Logoleft">
 
             <img src={Logo} alt="a logo" width="280" height="105"/>
-                City component 
+                <div className = "city"><City city ="Manchester"/></div>
             </div>
         
             <div className="Logoright">

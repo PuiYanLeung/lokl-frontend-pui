@@ -7,7 +7,49 @@ body {
      margin: 10%;
     display:flex;
     padding: 100px;
-    
     justify-content: space-between;
     border-radius: 15%;
+ }
+ .Message1 {
+    background-color:#ffffff;
+    padding: 100px;
+    border-radius: 15%;
+    border-color: black;
+    border-style: solid;
+    border-width:0.5px ;
+    margin-bottom: 5px;
+
+ }
+ .Message2  {
+    background-color:#ffffff;
+    padding: 100px;
+    border-radius: 15%;
+    border-color: black;
+    border-style: solid;
+    border-width:0.5px ;
+    margin-bottom: 5px;
+
+ }
+ .Message3 {
+    background-color:#ffffff;
+    padding: 100px;
+    border-radius: 15%;
+    border-color: black;
+    border-style: solid;
+    border-width:0.5px ;
+    margin-bottom: 5px;
+
+ }
+ .Messagebox{
+     display: flex;
+     flex-direction: column;
+     align-content: space-between;
+     
+ }
+ .happyguy{
+     display: flex;
+     flex-direction: column;
+ }
+ .something{
+     margin: 100px;
  }
