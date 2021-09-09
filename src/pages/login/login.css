@@ -1,65 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800&display=swap');
 
 .login {
+
     width: 100vw;
     height: 100vh;
-    background-color: white;
+    background-color:white;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between; 
+   
+   flex:stretch;
+    flex-wrap: wrap; 
   }
-  
-  .loginWrapper {
+/*   
+  /* .loginWrapper {
     width: 100%;
     height: 100%;
     display: flex;
+    flex-wrap: wrap;
+  } */
+ .loginLeft{
+   
+  background-color: #329EB2 ;
+  flex-grow: 1;
+  flex-wrap: wrap; 
+     display: flex;
+    flex-direction: column;
+
   }
 
-  .loginLeft,
+  
   .loginRight {
-    flex: 1;
+    
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
+    background-color:white;
+    max-height: 100%;
+    flex-grow: 1;
 
-  .loginLeft{
-    background-color: #329EB2;
-  }
-
-  
-  .loginLogo {
-    position: absolute;
-    width: 381px;
-    height: 114px;
-    left: 30px;
-    top: 6px;    
   }
   
-  .loginDesc {
-    position: absolute;
-    width: 617px;
-    height: 93px;
-    left: 66px;
-    top: 162px;
-    background: rgba(252, 207, 155, 0.85);
-    border-radius: 20px;
 
-    font-size: 40px;
-    line-height: 47px;
-    color: #278192;
-    text-align: center;
-
-  }
-
-  .neighbourPic{
-    position: absolute;
-    width: 563px;
-    height: 587px;
-    left: 77px;
-    top: 314px;
-  }
+ 
   
+ .loginLogo {
+   margin-left: 8px;  
+  }  
+  
+.loginDesc{
+  margin-left: 8px;
+}
+   
   .loginBox{
       height: 300px;
       padding: 20px;
@@ -78,14 +70,13 @@
     text-align: center;
     font-weight: bold;
     font-style: italic;
-  }
-  
-  .loginInput{
-      /* height: 50px;
+  } 
+  .Username{
+ height: 50px;
       border-radius: 10px;
       border: 1px solid gray;
       font-size: 18px;
-      padding-left: 20px; */
+      padding: 10px;
 
         background-color: rgba(249, 249, 250, 0.85);
         width: 499px;
@@ -95,13 +86,42 @@
         border: 1px solid #329EB2;
         box-sizing: border-box;
         border-radius: 15px;
-        font-size: 30px;
+        font-size: 30px;  
         align-self: center;
   }
-  
-  .loginInput:focus{
-      outline: none;
+  .Password{
+    height: 50px;
+      border-radius: 10px;
+      border: 1px solid gray;
+      font-size: 18px;
+      padding: 10px;
+
+        background-color: rgba(249, 249, 250, 0.85);
+        width: 499px;
+        height: 60px;
+        left: 843px;
+        top: 255px;
+        border: 1px solid #329EB2;
+        box-sizing: border-box;
+        border-radius: 15px;
+        font-size: 30px;  
+        align-self: center;
   }
+  .loginInput{
+     text-decoration: none;
+     border-style:none;
+     background-color: rgba(249, 249, 250, 0.85);
+     outline: none;
+  } 
+      
+  .PassnInput{
+    text-decoration: none;
+     border-style:none;
+     background-color: rgba(249, 249, 250, 0.85);
+     outline: none;
+  } 
+
+    
   
   .loginButton{
     cursor: pointer;
@@ -136,4 +156,12 @@
     text-align: center;
     color: rgba(25, 42, 89, 0.85);
     align-self: center;
+  } 
+  .loginButton:hover{
+    transform: scale(1.05);
+    background-color:rgba(33, 52, 102, 0.85) ;
+  }
+  .loginRegisterButton:hover{
+    transform: scale(1.05);
+    background-color:rgba(240, 163, 75, 0.85) ;
   }
