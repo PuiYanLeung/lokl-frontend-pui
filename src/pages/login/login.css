@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800&display=swap');
+
+.login {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loginWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  .loginLeft,
+  .loginRight {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .loginLeft{
+    background-color: #329EB2;
+  }
+
+  
+  .loginLogo {
+    position: absolute;
+    width: 381px;
+    height: 114px;
+    left: 30px;
+    top: 6px;    
+  }
+  
+  .loginDesc {
+    position: absolute;
+    width: 617px;
+    height: 93px;
+    left: 66px;
+    top: 162px;
+    background: rgba(252, 207, 155, 0.85);
+    border-radius: 20px;
+
+    font-size: 40px;
+    line-height: 47px;
+    color: #278192;
+    text-align: center;
+
+  }
+
+  .neighbourPic{
+    position: absolute;
+    width: 563px;
+    height: 587px;
+    left: 77px;
+    top: 314px;
+  }
+  
+  .loginBox{
+      height: 300px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+
+  .loginHeadling{
+    font-family: 'Sansita', sans-serif;
+    font-size: 60px;
+    line-height: 70px;
+    color: #278192;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+  }
+  
+  .loginInput{
+      /* height: 50px;
+      border-radius: 10px;
+      border: 1px solid gray;
+      font-size: 18px;
+      padding-left: 20px; */
+
+        background-color: rgba(249, 249, 250, 0.85);
+        width: 499px;
+        height: 60px;
+        left: 843px;
+        top: 255px;
+        border: 1px solid #329EB2;
+        box-sizing: border-box;
+        border-radius: 15px;
+        font-size: 30px;
+        align-self: center;
+  }
+  
+  .loginInput:focus{
+      outline: none;
+  }
+  
+  .loginButton{
+    cursor: pointer;
+    width: 499px;
+    height: 60px;
+    left: 843px;
+    top: 522px;
+    background-color: rgba(25, 42, 89, 0.85);
+    border-radius: 15px;
+    border: none;
+    font-size: 30px;
+    font-style: normal;
+    line-height: 35px;
+    text-align: center;
+    color: #BECACC;
+    align-self: center;
+  }
+  
+  
+  .loginRegisterButton{
+    cursor: pointer;
+    width: 401px;
+    height: 60px;
+    left: 898px;
+    top: 649px;
+    background-color: rgba(255, 158, 44, 0.85);
+    border-radius: 15px;
+    border: none;
+    font-size: 30px;
+    font-style: normal;
+    line-height: 35px;
+    text-align: center;
+    color: rgba(25, 42, 89, 0.85);
+    align-self: center;
+  }
