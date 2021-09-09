@@ -1,17 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
 
 const App = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          LOKL is coming soon!
-        </p>
-      </header>
-    </div>
-  );
+  //return <Home/>;
+  return <Login/>;
 }
 
 export default App;
