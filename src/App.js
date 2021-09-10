@@ -1,20 +1,14 @@
-
-import './App.css';
-import Mainfeed from './Mainfeed/Mainfeed';
-import Navbar from './Navbar/Navbar';
+import "./App.css";
+import Login from "./pages/login/Login";
+import Mainfeed from "./Mainfeed/Mainfeed";
+import Navbar from "./Navbar/Navbar";
 function App() {
-  return < Navbar/>
-
-
-  // return (
-  // <div> hi</div>
- 
-}
-
-
-
-function Appone() {
-   return < Mainfeed/>
+    return (
+        <div>
+            <Login />
+            <Navbar />
+            <Mainfeed />
+        </div>
+    );
 }
 export default App;
-export {Appone} ;
