@@ -1,0 +1,69 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Sansita:ital,wght@1,400;1,700&display=swap');
+body {
+    margin: 20px; 
+    color:#192A59;
+    font-family: 'Sansita', sans-serif;
+  
+ }
+.Profile{
+    display: flex;
+    justify-content: space-between; 
+    flex:stretch;
+    flex-wrap: wrap;
+     background-color: white;
+     align-items: center;
+     font-family: 'Sansita', sans-serif;
+  
+
+}
+p{
+    font-family: 'Sansita', sans-serif;
+    font-weight: 300;
+}
+h3{
+    font-family: 'Sansita', sans-serif;
+font-weight: 700;
+font-size: xx-large;
+text-align: center;
+margin-bottom: 20px;
+}
+.ProfilePic{
+     background-color:#eeeded ;
+}
+.ProfileContent{
+    margin:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color:white;
+    max-height: 100%;
+    flex-grow: 1;
+}
+.Posthistory{
+    background-color:#BEE2EB;
+    border-radius: 20%;
+    border-style: solid;
+    border-color:#329EB2 ;
+    margin:20px;
+    margin-left:50px;
+    padding: 100px;
+    width: 290px;
+    height: 110px;
+    flex-grow: 2 ;   
+  
+
+}
+
+.About{
+    background-color:#BEE2EB;
+    border-radius: 20%;
+    margin:0px,10px;
+    padding: 100px;
+    width: 270px;
+    height: 150px;
+    margin-left:80px;    
+    font-family: 'Sansita', sans-serif;
+  
+
+}

@@ -7,7 +7,6 @@
     background-color:white;
     display: flex;
     justify-content: space-between; 
-   
    flex:stretch;
     flex-wrap: wrap; 
   }
