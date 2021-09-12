@@ -1,7 +1,5 @@
-
-
 import React from 'react'
-import "./Profile.css"
+import "./profilecontent.css"
 import Profileguy from "./Profileguy.png"
 
 
@@ -16,7 +14,7 @@ const PostH =(props)=>{
         <p> This is a place for message history{props.message}</p>
     )
 }
-export default function Profile() {
+export default function Profilecontent() {
     return (
         <div className="Profile">
             <div className="ProfilePic">
