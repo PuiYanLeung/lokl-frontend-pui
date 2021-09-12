@@ -1,33 +1,82 @@
 import "./login.css";
-import axios from "axios";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../authContext/AuthContext";
+import { login } from "../../authContext/apiCalls";
 import House from "./neighbourPic.png";
 import Sayhi from "./sayhi.png";
 import User from "./user.png";
-import Password from "./lock.png"
-
+import Password from "./lock.png";
 
 export default function Login() {
-  return (
-    <div className="login">   
-        <div className="loginLeft">
-          <img className="loginLogo" src="/assets/logo/login.png" alt="logo" width="381px" height="114px" />
-           <div className="loginDesc"><img src={Sayhi} alt="sayhi" width="580px" height="85px" /></div>
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const { dispatch } = useContext(AuthContext);
 
-         <div className="neighbourPic"><img src={House} alt="house" width="450" height="455" /></div>
+    const handleLogin = (e) => {
+        e.preventDefault();
+        login({ username, password }, dispatch);
+    };
+
+    return (
+        <div className="login">
+            <div className="loginLeft">
+                <img
+                    className="loginLogo"
+                    src="/assets/logo/login.png"
+                    alt="logo"
+                    width="381px"
+                    height="114px"
+                />
+                <div className="loginDesc">
+                    <img src={Sayhi} alt="sayhi" width="580px" height="85px" />
+                </div>
+
+                <div className="neighbourPic">
+                    <img src={House} alt="house" width="450" height="455" />
+                </div>
+            </div>
+
+            <div className="loginRight">
+                <form>
+                    <div className="loginHeadling">LOGIN</div>
+                    <div className="loginBox">
+                        <div className="Username">
+                            {" "}
+                            <img
+                                src={User}
+                                alt="usericon"
+                                width="40px"
+                                height="43px"
+                            />{" "}
+                            <input
+                                className="loginInput"
+                                placeholder="Username"
+                                onChange={(e) => setUsername(e.target.value)}
+                            />
+                        </div>
+                        <div className="Password">
+                            {" "}
+                            <img
+                                src={Password}
+                                alt="passwordicon"
+                                width="40px"
+                                height="43px"
+                            />{" "}
+                            <input
+                                className="PassnInput"
+                                placeholder="Password"
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                        </div>
+                        <button className="loginButton" onClick={handleLogin}>
+                            Sign in
+                        </button>
+                        <button className="loginRegisterButton">
+                            Register
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-  
-
-        <div className="loginRight">
-          <div className="loginHeadling">LOGIN</div>
-          <div className="loginBox">   
-
-          <div className="Username"> <img src={User} alt="usericon" width="40px" height="43px" /> <input className="loginInput" placeholder="Username"  /></div>
-          <div className="Password"> <img src={Password} alt="passwordicon" width="40px" height="43px" /> <input className="PassnInput" placeholder="Password"  /></div>
-            <button className="loginButton">Sign in</button>
-            <button className="loginRegisterButton">Register</button>
-          </div>
-        </div>
-    
-    </div>
-  );
+    );
 }
