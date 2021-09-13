@@ -8,44 +8,34 @@ body {
     display:flex;
     padding: 100px;
     justify-content: space-between;
-    border-radius: 15%;
- }
- .Message1 {
-    background-color:#ffffff;
-    padding: 100px;
-    border-radius: 15%;
-    border-color: black;
+    border-radius: 5%;
+    border-color:#329EB2;
     border-style: solid;
-    border-width:0.5px ;
-    margin-bottom: 5px;
-
- }
- .Message2  {
-    background-color:#ffffff;
-    padding: 100px;
-    border-radius: 15%;
-    border-color: black;
-    border-style: solid;
-    border-width:0.5px ;
-    margin-bottom: 5px;
-
- }
- .Message3 {
-    background-color:#ffffff;
-    padding: 100px;
-    border-radius: 15%;
-    border-color: black;
-    border-style: solid;
-    border-width:0.5px ;
-    margin-bottom: 5px;
-
- }
+ } 
  .Messagebox{
      display: flex;
      flex-direction: column;
      align-content: space-between;
-     
+    
  }
+ .Message1 {
+    background-color:#ffffff;
+    padding: 50px;
+    max-height: 70vh;
+    max-width: 80vw;
+    border-radius: 10%;
+    border-color: black;
+    border-style: solid;
+    border-width:0.5px ;
+    margin-bottom: 5px;
+    flex: 1 0 auto;
+    height: auto;
+ }
+.Message1:before{
+   content: '';
+   display: block;
+   padding-top: 80%;
+}
  .happyguy{
      display: flex;
      flex-direction: column;

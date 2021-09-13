@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Navbar.css"
 import Logo  from "./Navbarcomponents/Logo.png"
-import Profile from "./Navbarcomponents/Profile.png"
+import Profilepic from "./Navbarcomponents/Profile.png"
 import Post from "./Navbarcomponents/Post.png"
 import Logout from "./Navbarcomponents/Logout.png"
 import { useContext } from "react";
@@ -26,6 +26,7 @@ export default function Navbar() {
             </div>
 
             <div className="Logoright">
+
                 <div className="profileflex">
                     <Link className="profileflex" to="/profile">
                         <img
@@ -48,6 +49,7 @@ export default function Navbar() {
                         onClick={() => dispatch(logout())}
                     />
                 </div>
+
             </div>
         </div>
     );
