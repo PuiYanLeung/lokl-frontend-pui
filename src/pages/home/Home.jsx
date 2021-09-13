@@ -9,7 +9,7 @@ export default function Home() {
         const getPosts = async () => {
           try {
             const secret_token = JSON.parse(localStorage.getItem("user")).token
-            const res = await axios.get(`http://localhost:5000/post${secret_token ? "?secret_token=" + secret_token : ""}`);
+            const res = await axios.get(`post${secret_token ? "?secret_token=" + secret_token : ""}`);
             //console.log(res);
             setPosts(res.data.response);
           } catch (err) {
