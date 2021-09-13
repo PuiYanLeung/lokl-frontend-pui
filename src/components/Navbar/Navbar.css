@@ -47,3 +47,13 @@ body {
     margin-top: 10px;
     margin-left: 10px;
 }
+.logoutflex:hover{
+transform: scale(1.05);
+} 
+
+.profileflex:hover{
+    transform: scale(1.05);
+   }
+   .postflex:hover{
+    transform: scale(1.05);
+   }

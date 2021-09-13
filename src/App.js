@@ -11,6 +11,7 @@ import {
 import { useContext } from "react";
 import { AuthContext } from "./authContext/AuthContext";
 
+
 function App() {
     const { user } = useContext(AuthContext);
     return (
@@ -23,7 +24,7 @@ function App() {
                     {user ? <Home /> : <Redirect to="/login" />}
                 </Route>
                 <Route path="/profile">
-                    <Profile />
+                    <Profile/>
                 </Route>
             </Switch>
         </Router>

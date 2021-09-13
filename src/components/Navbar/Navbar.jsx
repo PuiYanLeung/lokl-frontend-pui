@@ -1,12 +1,13 @@
 import React from 'react'
 import "./Navbar.css"
 import Logo  from "./Navbarcomponents/Logo.png"
-import Profile from "./Navbarcomponents/Profile.png"
+import Profilepic from "./Navbarcomponents/Profile.png"
 import Post from "./Navbarcomponents/Post.png"
 import Logout from "./Navbarcomponents/Logout.png"
 import { useContext } from "react";
 import { AuthContext } from "../../authContext/AuthContext";
 import { logout } from "../../authContext/AuthActions";
+import Profile from '../../pages/profile/Profile'
 
 const City = (props) => {
     return (
@@ -25,7 +26,7 @@ export default function Navbar() {
         
             <div className="Logoright">
            
-           <div className="profileflex"> <img src={Profile} alt="profile" width="45" height="55"/></div>
+           <div className="profileflex"> <img src={Profilepic} alt="profile" width="45" height="55"/></div>
            <div className="postflex"><img src={Post} alt="post" width="45" height="55"/></div>
            <div className="logoutflex"><img src={Logout} alt="logout" width="45" height="53" onClick={() => dispatch(logout())}/></div> 
             
