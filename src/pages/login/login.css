@@ -74,7 +74,7 @@
  height: 50px;
       border-radius: 10px;
       border: 1px solid gray;
-      font-size: 18px;
+      
       padding: 10px;
 
         background-color: rgba(249, 249, 250, 0.85);
@@ -92,7 +92,6 @@
     height: 50px;
       border-radius: 10px;
       border: 1px solid gray;
-      font-size: 18px;
       padding: 10px;
 
         background-color: rgba(249, 249, 250, 0.85);
