@@ -2,10 +2,7 @@ import "./login.css";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../authContext/AuthContext";
 import { login } from "../../authContext/apiCalls";
-import House from "./neighbourPic.png";
-import Sayhi from "./sayhi.png";
-import User from "./user.png";
-import Password from "./lock.png";
+import { Link } from "react-router-dom";
 
 export default function Login() {
     const [username, setUsername] = useState("");
@@ -28,11 +25,21 @@ export default function Login() {
                     height="114px"
                 />
                 <div className="loginDesc">
-                    <img src={Sayhi} alt="sayhi" width="580px" height="85px" />
+                    <img
+                        src="/assets/login/sayhi.png"
+                        alt="sayhi"
+                        width="580px"
+                        height="85px"
+                    />
                 </div>
 
                 <div className="neighbourPic">
-                    <img src={House} alt="house" width="450" height="455" />
+                    <img
+                        src="/assets/login/neighbourPic.png"
+                        alt="house"
+                        width="450"
+                        height="455"
+                    />
                 </div>
             </div>
 
@@ -43,7 +50,7 @@ export default function Login() {
                         <div className="Username">
                             {" "}
                             <img
-                                src={User}
+                                src="/assets/login/user.png"
                                 alt="usericon"
                                 width="40px"
                                 height="43px"
@@ -57,13 +64,14 @@ export default function Login() {
                         <div className="Password">
                             {" "}
                             <img
-                                src={Password}
+                                src="/assets/login/lock.png"
                                 alt="passwordicon"
                                 width="40px"
                                 height="43px"
                             />{" "}
                             <input
                                 className="PassnInput"
+                                type="password"
                                 placeholder="Password"
                                 onChange={(e) => setPassword(e.target.value)}
                             />
@@ -71,9 +79,11 @@ export default function Login() {
                         <button className="loginButton" onClick={handleLogin}>
                             Sign in
                         </button>
-                        <button className="loginRegisterButton">
-                            Register
-                        </button>
+                        <Link className="loginRegisterButton" to="/register">
+                            <button className="loginRegisterButton">
+                                Register
+                            </button>
+                        </Link>
                     </div>
                 </form>
             </div>

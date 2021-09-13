@@ -7,6 +7,7 @@ import Logout from "./Navbarcomponents/Logout.png"
 import { useContext } from "react";
 import { AuthContext } from "../../authContext/AuthContext";
 import { logout } from "../../authContext/AuthActions";
+import { Link } from "react-router-dom";
 
 const City = (props) => {
     return (
@@ -18,18 +19,36 @@ export default function Navbar() {
     return (
         <div className="Navbar">
             <div className="Logoleft">
-
-            <img src={Logo} alt="a logo" width="280" height="105"/>
-                <div className = "city"><City city ="Manchester"/></div>
+                <img src={Logo} alt="a logo" width="280" height="105" />
+                <div className="city">
+                    <City city="Manchester" />
+                </div>
             </div>
-        
+
             <div className="Logoright">
-           
-           <div className="profileflex"> <img src={Profile} alt="profile" width="45" height="55"/></div>
-           <div className="postflex"><img src={Post} alt="post" width="45" height="55"/></div>
-           <div className="logoutflex"><img src={Logout} alt="logout" width="45" height="53" onClick={() => dispatch(logout())}/></div> 
-            
+                <div className="profileflex">
+                    <Link className="profileflex" to="/profile">
+                        <img
+                            src={Profile}
+                            alt="profile"
+                            width="45"
+                            height="55"
+                        />
+                    </Link>
+                </div>
+                <div className="postflex">
+                    <img src={Post} alt="post" width="45" height="55" />
+                </div>
+                <div className="logoutflex">
+                    <img
+                        src={Logout}
+                        alt="logout"
+                        width="45"
+                        height="53"
+                        onClick={() => dispatch(logout())}
+                    />
+                </div>
             </div>
         </div>
-    )
+    );
 }
