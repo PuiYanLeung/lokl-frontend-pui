@@ -4,52 +4,50 @@ body {
 
  .Mainfeed {
     background-color:#BEE2EB;
-     margin: 10%;
+     margin: 3%;
     display:flex;
-    padding: 100px;
+    padding: 5px;
     justify-content: space-between;
-    border-radius: 15%;
- }
- .Message1 {
-    background-color:#ffffff;
-    padding: 100px;
-    border-radius: 15%;
-    border-color: black;
+    border-radius: 4%;
+    border-color:#329EB2;
     border-style: solid;
-    border-width:0.5px ;
-    margin-bottom: 5px;
-
- }
- .Message2  {
-    background-color:#ffffff;
-    padding: 100px;
-    border-radius: 15%;
-    border-color: black;
-    border-style: solid;
-    border-width:0.5px ;
-    margin-bottom: 5px;
-
- }
- .Message3 {
-    background-color:#ffffff;
-    padding: 100px;
-    border-radius: 15%;
-    border-color: black;
-    border-style: solid;
-    border-width:0.5px ;
-    margin-bottom: 5px;
-
- }
+    flex-wrap: wrap;
+ } 
  .Messagebox{
      display: flex;
      flex-direction: column;
      align-content: space-between;
-     
+     flex-wrap: wrap;
+    
  }
- .happyguy{
+ .Message1 {
+     display: flex;
+    background-color:#ffffff;
+    padding: 30px;
+    max-height: 45vh;
+    max-width: 40vw;
+    border-radius: 10%;
+    border-color: black;
+    border-style: solid;
+    border-width:0.5px ;
+    margin-bottom: 5px;
+    flex: 1 0 auto;
+    height: auto;
+    flex-wrap: wrap;
+ }
+.Message1:before{
+   content: '';
+   display: block;
+   padding-top: 80%;
+}
+ .Mainleft{
      display: flex;
      flex-direction: column;
+     margin:10px;
+     justify-content:space-between;
+     flex-wrap: wrap;
+    
  }
- .something{
-     margin: 100px;
+ .Banner{
+     margin: 10px;
  }

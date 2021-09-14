@@ -17,15 +17,7 @@ body {
     border-color:#192A59;
     border-width:1px;
 }
-.Logoright {
-    display: flex;
-    padding-left: 10px;
-    padding-right: 40px;
-    padding-top: 5px;
-    justify-content:space-between;
-    align-content: space-around;
 
-}
 
 .Logoleft {
     display: flex;
@@ -47,3 +39,13 @@ body {
     margin-top: 10px;
     margin-left: 10px;
 }
+.logoutflex:hover{
+transform: scale(1.05);
+} 
+
+.profileflex:hover{
+    transform: scale(1.05);
+   }
+   .postflex:hover{
+    transform: scale(1.05);
+   }

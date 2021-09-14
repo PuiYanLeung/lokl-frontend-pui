@@ -1,5 +1,6 @@
 import Mainfeed from "../../components/Mainfeed/Mainfeed";
 import Navbar from "../../components/Navbar/Navbar";
+import Filler from "../../components/Mainfeed/Mainfiller";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
