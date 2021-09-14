@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Navbar.css"
 import Logo  from "./Navbarcomponents/Logo.png"
-import Profilepic from "./Navbarcomponents/Profile.png"
+import Home from "./Navbarcomponents/home.png"
 import Post from "./Navbarcomponents/Post.png"
 import Logout from "./Navbarcomponents/Logout.png"
 import { useContext } from "react";
@@ -14,12 +14,13 @@ const City = (props) => {
         <p> I am dynamic and will display {props.city}</p>
     )
 }
-export default function Navbar() {
+export default function NavbarProf() {
     const { dispatch } = useContext(AuthContext);
     return (
         <div className="Navbar">
-         
-         <div className="Logoleft">
+           
+
+                <div className="Logoleft">
                     <Link className="Logo" to="/">
                         <img
                             src={Logo}
@@ -34,12 +35,11 @@ export default function Navbar() {
                 </div>
             </div>
 
-           
 
-                <div className="profileflex">
-                    <Link className="profileflex" to="/profile">
+                <div className="Backtomainflex">
+                    <Link className="Backtomainflex" to="/">
                         <img
-                            src={Profilepic}
+                            src={Home}
                             alt="profile"
                             width="45"
                             height="55"
@@ -60,6 +60,6 @@ export default function Navbar() {
                 </div>
 
             </div>
-       
+        
     );
 }
