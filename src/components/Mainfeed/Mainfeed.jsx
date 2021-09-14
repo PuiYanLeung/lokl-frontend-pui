@@ -1,6 +1,6 @@
 import "./Mainfeed.css";
 import Happyguy from "./mainpagepictures/happyguy.png";
-import Sadguy from "./mainpagepictures/Sadguy.png"
+import Sayhi from "./mainpagepictures/sayhi.png";
 
 const Message = ({author, content, city, date}) =>{
     return (
@@ -17,10 +17,12 @@ const Message = ({author, content, city, date}) =>{
 export default function Mainfeed({post}) {
     return (
         <div className="Mainfeed">
-            <div className="happyguy">
 
-            <div className ="something"></div>
+            <div className="Mainleft">
+
+            <div className ="Banner"> <img src={Sayhi} alt="banner"/></div>
             <div className="happyguypicture"> <img src={Happyguy} alt="HAPPYGUY"/></div>
+            
             </div>
         
             {/* <div className="Messagebox"> */}
