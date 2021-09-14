@@ -1,10 +1,10 @@
 import Profilecontent from "../../components/Profilecontent/Profilecontent";
-import Navbar from "../../components/Navbar/Navbar";
+import NavbarProf from "../../components/Navbar/navbarprof";
 
 export default function Profile() {
     return (
         <div>
-            <Navbar/>
+            <NavbarProf/>
             <Profilecontent/>
         </div>
     )

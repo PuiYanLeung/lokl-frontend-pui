@@ -1,0 +1,50 @@
+body {
+    margin: 0; 
+    background-color:#F9F9FA;
+ }
+ 
+ .Navbar{
+     background-color: #329EB2;
+     max-height: 100vh;
+     max-width :100vw;
+     display:flex;
+     padding: 10px;
+     align-items: center;
+     position: sticky;
+     top:0;
+     justify-content: space-between;
+     border-style: solid;
+     border-color:#192A59;
+     border-width:1px;
+ }
+
+ .Logoleft {
+     display: flex;
+     padding-left: 10px;
+     padding-right: 40px;
+     padding-top: 5px;
+     justify-content:space-between;
+     align-content: space-around;
+   
+ }
+ 
+ .Backtomainflex{
+  margin: 5px;
+ }
+ .postflex{
+     margin: 5px;
+ }
+ .logoutflex{
+     margin-top: 10px;
+     margin-left: 10px;
+ }
+ .logoutflex:hover{
+ transform: scale(1.05);
+ } 
+ 
+ .profileflex:hover{
+     transform: scale(1.05);
+    }
+    .postflex:hover{
+     transform: scale(1.05);
+    }
