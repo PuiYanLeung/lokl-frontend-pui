@@ -10,7 +10,6 @@ export default function Home() {
           try {
             const secret_token = JSON.parse(localStorage.getItem("user")).token
             const res = await axios.get(`post${secret_token ? "?secret_token=" + secret_token : ""}`);
-            //console.log(res);
             setPosts(res.data.response);
           } catch (err) {
             console.log(err);
