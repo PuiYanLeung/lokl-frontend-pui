@@ -52,7 +52,6 @@ export default function Navbar({user, setUser}) {
 
     const handleClickOpen = () => {
         setOpen(true);
-        console.log(user);
     };
 
     const handleClose = () => {

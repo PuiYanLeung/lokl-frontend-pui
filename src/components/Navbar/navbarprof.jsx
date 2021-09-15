@@ -8,8 +8,9 @@ import Home from "./Navbarcomponents/home.png";
 import Post from "./Navbarcomponents/Post.png";
 import Logout from "./Navbarcomponents/Logout.png";
 import {Link} from "react-router-dom";
+import axios from "axios";
 
-const PostDialog = ({open, onClose}) => {
+const PostDialog = ({open, onClose, user}) => {
     const handleClose = () => {
         onClose();
     };
@@ -19,7 +20,16 @@ const PostDialog = ({open, onClose}) => {
         handleSubmit,
         formState: {errors},
     } = useForm();
-    const onSubmit = (data) => console.log(data);
+
+    const onSubmit = async (data) => {
+        await axios.post(`/post${user.token ? "?secret_token=" + user.token : ""}`, {
+            city: user.city,
+            author: user.username,
+            content: data.content,
+        });
+        handleClose();
+    };
+
     console.log(errors);
 
     return (
@@ -64,8 +74,8 @@ export default function NavbarProf({user, setUser}) {
                 </Link>
             </div>
             <div className="postflex">
-                <img src={Post} alt="post" width="45" height="55" />
-                <PostDialog open={open} onClose={handleClose} />
+                <img src={Post} onClick={handleClickOpen} alt="post" width="45" height="55" />
+                <PostDialog user={user} open={open} onClose={handleClose} />
             </div>
             <div className="logoutflex">
                 <img
