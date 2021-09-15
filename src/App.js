@@ -4,35 +4,30 @@ import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import Register from "./pages/register/Register";
 import SecondRegister from "./pages/secondRegister/SecondRegister";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Redirect,
-} from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "./authContext/AuthContext";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { useState } from "react";
 
 
 function App() {
-    const { user } = useContext(AuthContext);
+    const [ user, setUser ]  = useState(null);
+
     return (
         <Router>
             <Switch>
                 <Route path="/login">
-                    {!user ? <Login /> : <Redirect to="/" />}
+                    {!user ? <Login user = {user} setUser = {setUser} /> : <Redirect to="/" />}
                 </Route>
                 <Route path="/register">
-                    {!user ? <Register/> : <Redirect to="/secondregister" />}
+                    {!user ? <Register user = {user} setUser = {setUser}/> : <Redirect to="/secondregister" />}
                 </Route>
                 <Route path="/secondregister">
-                    {user ? <SecondRegister/> : <Redirect to="/Register" />}
+                    {user ? <SecondRegister user = {user} setUser = {setUser}/> : <Redirect to="/Register" />}
                 </Route>
                 <Route exact path="/">
-                    {user ? <Home /> : <Redirect to="/login" />}
+                    {user ? <Home user = {user} setUser = {setUser}/> : <Redirect to="/login" />}
                 </Route>
                 <Route path="/profile">
-                    {user ? <Profile /> : <Redirect to="/login" />}                    
+                    {user ? <Profile user = {user} setUser = {setUser} /> : <Redirect to="/login" />}                    
                 </Route>
             </Switch>
         </Router>

@@ -4,12 +4,12 @@ import Filler from "../../components/Mainfeed/Mainfiller";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function Home() {
+export default function Home({user, setUser}) {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
         const getPosts = async () => {
           try {
-            const secret_token = JSON.parse(localStorage.getItem("user")).token
+            const secret_token = user.token;
             const res = await axios.get(`post${secret_token ? "?secret_token=" + secret_token : ""}`);
             setPosts(res.data.response);
           } catch (err) {
@@ -21,7 +21,7 @@ export default function Home() {
 
     return (
         <div>
-            <Navbar/>
+            <Navbar user = {user} setUser = {setUser}/>
             {posts.map((p, i) => (            
                 <Mainfeed key={i} post={p}/>
             ))}
