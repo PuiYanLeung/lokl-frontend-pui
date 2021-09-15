@@ -23,7 +23,6 @@ const PostDialog = ({open, onClose}) => {
     console.log(errors);
 
     return (
-
         <Dialog onClose={handleClose} open={open}>
             <DialogTitle>Create new post</DialogTitle>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -50,25 +49,18 @@ export default function Navbar() {
     const handleClose = () => {
         setOpen(false);
     };
-  
+
     return (
         <div className="Navbar">
-         
-         <div className="Logoleft">
-                    <Link className="Logo" to="/">
-                        <img
-                            src={Logo}
-                            alt="logo"
-                            width="280"
-                            height="105"
-                        />
-                    </Link>
+            <div className="Logoleft">
+                <Link className="Logo" to="/">
+                    <img src={Logo} alt="logo" width="280" height="105" />
+                </Link>
 
                 <div className="city">
                     <City city="Manchester" />
                 </div>
             </div>
-
 
             <div className="Logoright">
                 <div className="profileflex">
@@ -90,6 +82,6 @@ export default function Navbar() {
                     />
                 </div>
             </div>
-       
+        </div>
     );
 }
