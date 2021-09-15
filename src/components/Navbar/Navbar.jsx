@@ -54,31 +54,27 @@ export default function Navbar({user, setUser}) {
                 <Link className="Logo" to="/">
                     <img src={Logo} alt="logo" width="280" height="105" />
                 </Link>
-
                 <div className="city">
                     <City city="Manchester" />
                 </div>
             </div>
-
-            <div className="Logoright">
-                <div className="profileflex">
-                    <Link className="profileflex" to="/profile">
-                        <img src={Profilepic} alt="profile" width="45" height="55" />
-                    </Link>
-                </div>
-                <div className="postflex">
-                    <img src={Post} onClick={handleClickOpen} alt="post" width="45" height="55" />
-                    <PostDialog open={open} onClose={handleClose} />
-                </div>
-                <div className="logoutflex">
-                    <img
-                        src={Logout}
-                        alt="logout"
-                        width="45"
-                        height="53"
-                        onClick={() => setUser(null)}
-                    />
-                </div>
+            <div className="profileflex">
+                <Link className="profileflex" to="/profile">
+                    <img src={Profilepic} alt="profile" width="45" height="55" />
+                </Link>
+            </div>
+            <div className="postflex">
+                <img src={Post} onClick={handleClickOpen} alt="post" width="45" height="55" />
+                <PostDialog open={open} onClose={handleClose} />
+            </div>
+            <div className="logoutflex">
+                <img
+                    src={Logout}
+                    alt="logout"
+                    width="45"
+                    height="53"
+                    onClick={() => setUser(null)}
+                />
             </div>
         </div>
     );
