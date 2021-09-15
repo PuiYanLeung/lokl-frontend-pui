@@ -12,7 +12,7 @@ export default function Home({user, setUser}) {
             try {
                 const secret_token = user.token;
                 const res = await axios.get(
-                    `/post${secret_token ? "?secret_token=" + secret_token : ""}`
+                    `/post${secret_token ? "?secret_token=" + secret_token : ""}&q=city&v=${user.city}`
                 );
                 setPosts(res.data.response);
             } catch (err) {
