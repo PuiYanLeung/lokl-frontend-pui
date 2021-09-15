@@ -25,7 +25,7 @@ export default function Home({user, setUser}) {
     return (
         <div>
             <Navbar user={user} setUser={setUser} />
-            {posts.map((p, i) => (
+            {posts.slice(0).reverse().map((p, i) => (
                 <Mainfeed key={i} post={p} />
             ))}
         </div>
