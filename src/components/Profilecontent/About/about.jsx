@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import "./about.css"
 import EditButton from "./editbutton.png"
+import Xbt from "./X.png"
+import ok from "./OK.png"
 
 class Aboutmebox extends Component{
  state ={
@@ -23,20 +25,23 @@ class Aboutmebox extends Component{
  renderEditView = () => {
      return <div>
          <input
+         className="input"
          type="text"
          defaultValue={this.state.value}
          ref="theTextInput"
          />
-         <button onClick={this.changeEditMode}>X</button>
-         <button onClick={this.updateComponentValue}>Ok</button>
-         <button img src={EditButton} alt="editicon" onClick={this.changeEditMode}>Edit</button>
+         <div className="xbutton"> <img src={Xbt} alt="xBUTTON" width="25px" height="35px" onClick={this.changeEditMode}/></div>
+         <div className="okbtn"> <img src={ok} alt="okBUTTON" width="28px" height="32px" onClick={this.updateComponentValue}/></div>
+
+       
+
      </div>
  }
 
  
  renderDefaultView =() =>{
      return  <div>
-     <button onClick={this.changeEditMode}>Edit</button>
+     <div className="editbutton"> <img src={EditButton} alt="EDITBUTTON" width="33px" height="38px"onClick={this.changeEditMode} /></div>
      {this.state.value}
      </div>
  }

@@ -25,6 +25,7 @@ export default function Profilecontent(post) {
                 <div className="ProfileContent">
                     <div className="Greeting"><Greeting/></div>
                    <div className="Nameprof"><Message author={post.author}/></div>
+        
                     <div className="About"><Aboutmebox/></div>
                     
                     <div className="Posthistory"><PostH content={post.content}/></div>

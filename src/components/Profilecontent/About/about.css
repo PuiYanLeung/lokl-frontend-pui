@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800&display=swap');
+
+
+.input{
+    display: flex;
+    background-color: rgba(154, 217, 228, 0);
+    border:none;
+    width: 290px;
+    height: 150px;
+    font-family: "Sansita";
+    font-size: medium;
+    color: rgb(32, 32, 77);
+    flex-wrap: wrap;
+  
+
+}
