@@ -1,16 +1,12 @@
 import React from "react";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import TextField from "@material-ui/core/TextField";
 import {useForm} from "react-hook-form";
 import "./Navbar.css";
 import Logo from "./Navbarcomponents/Logo.png";
 import Profilepic from "./Navbarcomponents/Profile.png";
 import Post from "./Navbarcomponents/Post.png";
 import Logout from "./Navbarcomponents/Logout.png";
-import {useContext} from "react";
-import {AuthContext} from "../../authContext/AuthContext";
-import {logout} from "../../authContext/AuthActions";
 import {Link} from "react-router-dom";
 
 const PostDialog = ({open, onClose}) => {
@@ -27,6 +23,7 @@ const PostDialog = ({open, onClose}) => {
     console.log(errors);
 
     return (
+
         <Dialog onClose={handleClose} open={open}>
             <DialogTitle>Create new post</DialogTitle>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -53,15 +50,25 @@ export default function Navbar() {
     const handleClose = () => {
         setOpen(false);
     };
-
+  
     return (
         <div className="Navbar">
-            <div className="Logoleft">
-                <img src={Logo} alt="a logo" width="280" height="105" />
+         
+         <div className="Logoleft">
+                    <Link className="Logo" to="/">
+                        <img
+                            src={Logo}
+                            alt="logo"
+                            width="280"
+                            height="105"
+                        />
+                    </Link>
+
                 <div className="city">
                     <City city="Manchester" />
                 </div>
             </div>
+
 
             <div className="Logoright">
                 <div className="profileflex">
@@ -79,10 +86,10 @@ export default function Navbar() {
                         alt="logout"
                         width="45"
                         height="53"
-                        onClick={() => dispatch(logout())}
+                        onClick={() => setUser(null)}
                     />
                 </div>
             </div>
-        </div>
+       
     );
 }

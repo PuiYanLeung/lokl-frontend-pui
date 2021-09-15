@@ -1,17 +1,17 @@
 import "./login.css";
-import { useContext, useState } from "react";
-import { AuthContext } from "../../authContext/AuthContext";
-import { login } from "../../authContext/apiCalls";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
-export default function Login() {
+export default function Login({user, setUser}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const { dispatch } = useContext(AuthContext);
 
-    const handleLogin = (e) => {
+    const login = async(e) =>{
         e.preventDefault();
-        login({ username, password }, dispatch);
+        const res = await axios.post("user/login", {username, password});
+        const data = res.data;
+        setUser(data);
     };
 
     return (
@@ -76,7 +76,7 @@ export default function Login() {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
-                        <button className="loginButton" onClick={handleLogin}>
+                        <button className="loginButton" onClick={login}>
                             Sign in
                         </button>
                         <Link className="loginRegisterButton" to="/register">

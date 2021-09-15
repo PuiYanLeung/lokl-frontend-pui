@@ -4,42 +4,72 @@ body {
 
  .Mainfeed {
     background-color:#BEE2EB;
-     margin: 10%;
+     margin: 3%;
     display:flex;
-    padding: 100px;
+    padding: 5px;
     justify-content: space-between;
-    border-radius: 5%;
+    border-radius: 4%;
     border-color:#329EB2;
     border-style: solid;
+    flex-wrap: wrap;
  } 
  .Messagebox{
      display: flex;
      flex-direction: column;
      align-content: space-between;
+     flex-wrap: wrap;
     
  }
  .Message1 {
+     display: flex;
     background-color:#ffffff;
-    padding: 50px;
-    max-height: 70vh;
-    max-width: 80vw;
+    padding: 30px;
+    max-height: 45vh;
+    max-width: 40vw;
     border-radius: 10%;
-    border-color: black;
+    border-color: #267e8d;
     border-style: solid;
-    border-width:0.5px ;
+    border-width:3px ;
     margin-bottom: 5px;
     flex: 1 0 auto;
     height: auto;
+    flex-wrap: wrap;
  }
 .Message1:before{
    content: '';
    display: block;
    padding-top: 80%;
 }
- .happyguy{
+ .Mainleft{
      display: flex;
      flex-direction: column;
+     margin:10px;
+     justify-content:space-between;
+     flex-wrap: wrap;
+    
  }
- .something{
-     margin: 100px;
+ .Banner{
+     margin-top: 10px;
+     margin-left: 10px;
+ }
+ .Name{
+     font-size: xx-large;
+  
+     display: flex;
+     align-items: center;
+     background-color: #fccf9bda;
+     color: #267e8d;
+     border-radius: 1%;
+     margin-left: 40px;
+     margin-top: 0;
+    padding: 10px;
+    display: inline-block;
+    border:solid;
+    border-color: rgb(212, 177, 130);
+     
+ }
+ .Newsfeed{
+     display: flex;
+     flex-direction: column;
+     color:#18525c
  }

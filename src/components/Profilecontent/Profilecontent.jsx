@@ -1,11 +1,12 @@
 import React from 'react'
 import "./profilecontent.css"
 import Profileguy from "./Profileguy.png"
+import { Message } from '../Mainfeed/Mainfeed'
+import Aboutmebox from './About/about'
 
-
-const Greeting = (props) =>{
+const Greeting = () =>{
     return(
-        <h3>Hello,{props.name}</h3>
+        <h3>Hello</h3>
     )
 }
 
@@ -14,7 +15,7 @@ const PostH =(props)=>{
         <p> This is a place for message history{props.message}</p>
     )
 }
-export default function Profilecontent() {
+export default function Profilecontent(post) {
     return (
         <div className="Profile">
             <div className="ProfilePic">
@@ -22,9 +23,12 @@ export default function Profilecontent() {
             </div>
             
                 <div className="ProfileContent">
-                    <div className="Greeting"><Greeting name="Kris"/></div>
-                    <div className="About">About me</div>
-                    <div className="Posthistory"><PostH message="No messages to display"/></div>
+                    <div className="Greeting"><Greeting/></div>
+                   <div className="Nameprof"><Message author={post.author}/></div>
+        
+                    <div className="About"><Aboutmebox/></div>
+                    
+                    <div className="Posthistory"><PostH content={post.content}/></div>
 
                 </div>
         </div>

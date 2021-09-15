@@ -1,29 +1,23 @@
+import axios from "axios";
+import { useState } from "react";
 import "./register.css";
-import { useContext, useState } from "react";
-import Select from 'react-select';
 
-const Cityhover = () => {
-    return (
-        <div class="dropdown">
-            <button class="dropbtn">Choose a city</button>
-            <div class="dropdown-content">
-                <a value="Manchester">Manchester</a>
-                <a value="Liverpool">Liverpool</a>
-            </div>
-        </div>
-    );
-};
+export default function Register({user, setUser}) {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [checkPassword, setCheckPassword] = useState("");
 
-export default function Register() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordAgain, setPasswordAgain] = useState("");
-  const [email, setEmail] = useState("");
-  const [city, setCity] = useState("");
-  const options = [
-    { value: 'Manchester', label: 'Manchester' },
-    { value: 'Liverpool', label: 'Liverpool' }
-  ];
+    const handleRegister = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await axios.post("user/register", { username, password, checkPassword });
+            if (res.data.response === "registered successfully") {
+                const res = await axios.post("user/login", { username, password });
+                const data = res.data;
+                setUser(data);
+            }
+        } catch (err) {}
+    };
 
     return (
         <div className="login">
@@ -68,6 +62,7 @@ export default function Register() {
                         <input
                             className="loginInput"
                             placeholder="Username"
+                            required
                             onChange={(e) => setUsername(e.target.value)}
                         />
                     </div>
@@ -83,6 +78,7 @@ export default function Register() {
                             className="PassnInput"
                             type="password"
                             placeholder="Password"
+                            required
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
@@ -98,32 +94,16 @@ export default function Register() {
                             className="PassAgainInput"
                             type="password"
                             placeholder="Password Again"
-                            onChange={(e) => setPasswordAgain(e.target.value)}
+                            required
+                            onChange={(e) => setCheckPassword(e.target.value)}
                         />
                     </div>
-                    <div className="Email">
-                        {" "}
-                        <img
-                            src="/assets/login/emailpic.png"
-                            alt="Emailicon"
-                            width="40px"
-                            height="43px"
-                        />{" "}
-                        <input className="EmailInput" placeholder="Email" />
-                    </div>
-                    <div className="City">
-                      <Select class="dropdown-content" options={options} />
-
-                    {/* <div class="dropdown">
-                        <button class="dropbtn">Choose a city</button>
-                        <div class="dropdown-content" onChange={(e) => setCity(e.target.value)}>
-                            <a value="Manchester">Manchester</a>
-                            <a value="Liverpool">Liverpool</a>
-                        </div>
-                        <p>{city}</p>
-                    </div> */}
-                    </div>
-                        <button className="loginRegisterButton">Register</button>
+                    <button
+                        className="loginRegisterButton"
+                        onClick={handleRegister}
+                    >
+                        Register
+                    </button>
                 </div>
             </div>
         </div>
