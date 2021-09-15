@@ -1,21 +1,20 @@
 import axios from "axios";
-import { useContext, useState } from "react";
-import { AuthContext } from "../../authContext/AuthContext";
-import { login } from "../../authContext/apiCalls";
+import { useState } from "react";
 import "./register.css";
 
-export default function Register() {
+export default function Register({user, setUser}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [checkPassword, setCheckPassword] = useState("");
-    const { dispatch } = useContext(AuthContext);
 
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
             const res = await axios.post("user/register", { username, password, checkPassword });
             if (res.data.response === "registered successfully") {
-                login({ username, password }, dispatch);
+                const res = await axios.post("user/login", { username, password });
+                const data = res.data;
+                setUser(data);
             }
         } catch (err) {}
     };

@@ -4,9 +4,9 @@ import Logo  from "./Navbarcomponents/Logo.png"
 import Home from "./Navbarcomponents/home.png"
 import Post from "./Navbarcomponents/Post.png"
 import Logout from "./Navbarcomponents/Logout.png"
-import { useContext } from "react";
-import { AuthContext } from "../../authContext/AuthContext";
-import { logout } from "../../authContext/AuthActions";
+// import { useContext } from "react";
+// import { AuthContext } from "../../authContext/AuthContext";
+// import { logout } from "../../authContext/AuthActions";
 import { Link } from "react-router-dom";
 
 const City = (props) => {
@@ -14,8 +14,8 @@ const City = (props) => {
         <p> I am dynamic and will display {props.city}</p>
     )
 }
-export default function NavbarProf() {
-    const { dispatch } = useContext(AuthContext);
+export default function NavbarProf({user, setUser}) {
+    // const { dispatch } = useContext(AuthContext);
     return (
         <div className="Navbar">
            
@@ -55,7 +55,7 @@ export default function NavbarProf() {
                         alt="logout"
                         width="45"
                         height="53"
-                        onClick={() => dispatch(logout())}
+                        onClick={() => setUser(null)}
                     />
                 </div>
 
