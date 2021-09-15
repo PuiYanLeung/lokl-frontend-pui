@@ -8,8 +8,9 @@ import Profilepic from "./Navbarcomponents/Profile.png";
 import Post from "./Navbarcomponents/Post.png";
 import Logout from "./Navbarcomponents/Logout.png";
 import {Link} from "react-router-dom";
+import axios from "axios";
 
-const PostDialog = ({open, onClose}) => {
+const PostDialog = ({open, onClose, user}) => {
     const handleClose = () => {
         onClose();
     };
@@ -19,12 +20,21 @@ const PostDialog = ({open, onClose}) => {
         handleSubmit,
         formState: {errors},
     } = useForm();
-    const onSubmit = (data) => console.log(data);
+
+    const onSubmit = async (data) => {
+        await axios.post(`/post${user.token ? "?secret_token=" + user.token : ""}`, {
+            city: user.city,
+            author: user.username,
+            content: data.content,
+        });
+        handleClose();
+    };
+
     console.log(errors);
 
     return (
         <Dialog onClose={handleClose} open={open}>
-            <DialogTitle>Create new post</DialogTitle>
+            <DialogTitle>Create new post in {user.city}</DialogTitle>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <textarea {...register("content", {required: true})} />
                 <input type="submit" />
@@ -66,7 +76,7 @@ export default function Navbar({user, setUser}) {
             </div>
             <div className="postflex">
                 <img src={Post} onClick={handleClickOpen} alt="post" width="45" height="55" />
-                <PostDialog open={open} onClose={handleClose} />
+                <PostDialog user={user} open={open} onClose={handleClose} />
             </div>
             <div className="logoutflex">
                 <img
