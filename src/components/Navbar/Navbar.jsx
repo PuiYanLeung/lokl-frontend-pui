@@ -37,9 +37,7 @@ const City = (props) => {
     return <p> I am dynamic and will display {props.city}</p>;
 };
 
-export default function Navbar() {
-    const {dispatch} = useContext(AuthContext);
-
+export default function Navbar({user, setUser}) {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
