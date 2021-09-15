@@ -33,8 +33,8 @@ const PostDialog = ({open, onClose}) => {
     );
 };
 
-const City = (props) => {
-    return <p> I am dynamic and will display {props.city}</p>;
+const City = ({city}) => {
+    return city;
 };
 
 export default function Navbar({user, setUser}) {
@@ -42,6 +42,7 @@ export default function Navbar({user, setUser}) {
 
     const handleClickOpen = () => {
         setOpen(true);
+        console.log(user);
     };
 
     const handleClose = () => {
@@ -55,7 +56,7 @@ export default function Navbar({user, setUser}) {
                     <img src={Logo} alt="logo" width="280" height="105" />
                 </Link>
                 <div className="city">
-                    <City city="Manchester" />
+                    <City city={user.city} />
                 </div>
             </div>
             <div className="profileflex">
