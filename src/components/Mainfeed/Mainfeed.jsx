@@ -2,10 +2,9 @@ import "./Mainfeed.css";
 import Sayhi from "./mainpagepictures/sayhi.png";
 import RandomPicture from "./randompic";
 
-const Message = ({author, username, content, city, date}) => {
+const Message = ({author, content, city, date}) => {
     return (
         <>
-            <p>{username}</p>
             <p>{city}</p>
             <p>{author}</p>
             <p>{date}</p>

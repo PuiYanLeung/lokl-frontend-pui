@@ -67,3 +67,30 @@ margin-bottom: 20px;
 
 }
 
+.Message1 {
+    display: flex;
+   background-color:#ffffff;
+   padding: 30px;
+   max-height: 45vh;
+   max-width: 40vw;
+   border-radius: 10%;
+   border-color: #267e8d;
+   border-style: solid;
+   border-width:3px ;
+   margin-bottom: 5px;
+   flex: 1 0 auto;
+   height: auto;
+   flex-wrap: wrap;
+}
+.Message1:before{
+  content: '';
+  display: block;
+  padding-top: 80%;
+}
+
+.Newsfeed{
+    display: flex;
+    flex-direction: column;
+    color:#18525c
+}
+
