@@ -3,8 +3,6 @@ import "./profilecontent.css";
 import Profileguy from "./Profileguy.png";
 import {Message} from "../Mainfeed/Mainfeed";
 import Aboutmebox from "./About/about";
-import {PostAddSharp} from "@material-ui/icons";
-import Mainfeed from "../Mainfeed/Mainfeed";
 import axios from "axios";
 
 export default function Profilecontent({user}) {
@@ -25,7 +23,7 @@ export default function Profilecontent({user}) {
             }
         };
         getUserPosts();
-    }, []);
+    }, [user]);
 
     return (
         <div className="Profile">
