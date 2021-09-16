@@ -5,10 +5,13 @@ import RandomPicture from "./randompic";
 const Message = ({author, content, city, date}) => {
     return (
         <>
-            <p>{city}</p>
-            <p>{author}</p>
-            <p>{date}</p>
-            <p>{content}</p>
+        
+              
+                        <p>{city}</p>
+                        <p>{author}</p>
+                        <p>{date}</p>
+                        <p>{content}</p>
+     
         </>
     );
 };
@@ -25,10 +28,18 @@ export default function Mainfeed({post}) {
                 </div>
                 <RandomPicture />
             </div>
-            <div className="Message1">
-                <div className="Newsfeed">
+            
+                <div className="Newsfeed"> 
+                <div className = "Contentflex">
+                 <div className="Content">    
+                  <div className="TopDetails">
                     <Message author={post.author} city={post.city} date={post.date} />
+                    </div>
+                <div className="contentP">
                     <Message content={post.content} />
+                    </div>
+</div>
+
                 </div>
             </div>
         </div>
