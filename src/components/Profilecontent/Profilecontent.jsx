@@ -5,7 +5,7 @@ import {Message} from "../Mainfeed/Mainfeed";
 import Aboutmebox from "./About/about";
 import axios from "axios";
 
-export default function Profilecontent({user}) {
+export default function Profilecontent({user, post}) {
     const [userPosts, setUserPosts] = useState([]);
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export default function Profilecontent({user}) {
             }
         };
         getUserPosts();
-    }, [user]);
+    }, [user, post]);
 
     return (
         <div className="Profile">
