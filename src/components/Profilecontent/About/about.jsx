@@ -42,7 +42,7 @@ class Aboutmebox extends Component{
  renderDefaultView =() =>{
      return  <div>
      <div className="editbutton"> <img src={EditButton} alt="EDITBUTTON" width="33px" height="38px"onClick={this.changeEditMode} /></div>
-     {this.state.value}
+     <div className="Value">{this.state.value}</div>
      </div>
  }
  render() {

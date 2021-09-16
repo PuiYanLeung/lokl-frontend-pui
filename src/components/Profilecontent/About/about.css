@@ -2,15 +2,39 @@
 
 
 .input{
-    display: flex;
-    background-color: rgba(154, 217, 228, 0);
-    border:none;
-    width: 290px;
-    height: 150px;
-    font-family: "Sansita";
-    font-size: medium;
-    color: rgb(32, 32, 77);
-    flex-wrap: wrap;
+    background-color:#d0e4e9;
+    border-radius: 15%;
+    border-style: solid;
+    border-color:#116d7d ;
+    border-width: 4px;
+    color: #116d7d;
+   font-size: medium;
+    margin:20px;
+    padding: 120px;
+    width: 250px;
+    height: 100px;
+    flex-grow: 2 ;  
+    font-weight: 300;
+    flex-direction: column;
+
+
+}
+.Value{
+    background-color:#d0e4e9;
+    border-radius: 15%;
+    border-style: solid;
+    border-color:#116d7d ;
+    border-width: 4px;
+    color: #116d7d;
+   font-size: medium;
+    margin:20px;
+    padding: 120px;
+    width: 250px;
+    height: 100px;
+    flex-grow: 2 ;  
+    font-weight: 300;
+    flex-direction: column;
+
   
 
 }
