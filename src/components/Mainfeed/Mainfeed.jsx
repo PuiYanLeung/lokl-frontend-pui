@@ -15,7 +15,7 @@ const Message = ({ content, city, date }) => {
     return (
         <>
             <p>{city}</p>
-            <p>{format_date}</p>
+            {date && <p>{format_date}</p>}
             <p>{content}</p>
         </>
     );

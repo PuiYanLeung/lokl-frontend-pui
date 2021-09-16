@@ -10,6 +10,7 @@ import Logout from "./Navbarcomponents/Logout.png";
 import {Link} from "react-router-dom";
 import axios from "axios";
 
+
 const PostDialog = ({open, onClose, user, post, setPost}) => {
     const handleClose = () => {
         onClose();
@@ -48,8 +49,8 @@ const PostDialog = ({open, onClose, user, post, setPost}) => {
 
 const City = ({user, setUser}) => {
     return (
-        <div>
-            <select value={user.city} onChange={(selection) => {setUser({...user, city: selection.target.value})}}>
+        <div >
+            <select className="Slider" value={user.city} onChange={(selection) => {setUser({...user, city: selection.target.value})}}>
                 <option value="Liverpool">Liverpool</option>
                 <option value="Manchester">Manchester</option>
             </select>
@@ -74,9 +75,11 @@ export default function Navbar({user, setUser, post, setPost}) {
                 <Link className="Logo" to="/">
                     <img src={Logo} alt="logo" width="280" height="105" />
                 </Link>
+                
                 <div className="city">
                     <City user={user} setUser={setUser} />
                 </div>
+                
             </div>
             <div className="profileflex">
                 <Link className="profileflex" to="/profile">
