@@ -10,7 +10,7 @@ import Logout from "./Navbarcomponents/Logout.png";
 import {Link} from "react-router-dom";
 import axios from "axios";
 
-const PostDialog = ({open, onClose, user}) => {
+const PostDialog = ({open, onClose, user, post, setPost}) => {
     const handleClose = () => {
         onClose();
     };
@@ -22,11 +22,12 @@ const PostDialog = ({open, onClose, user}) => {
     } = useForm();
 
     const onSubmit = async (data) => {
-        await axios.post(`/post${user.token ? "?secret_token=" + user.token : ""}`, {
+        await axios.post(`${process.env.REACT_APP_BACKEND}/post${user.token ? "?secret_token=" + user.token : ""}`, {
             city: user.city,
             author: user.username,
             content: data.content,
         });
+        setPost(post + 1);
         handleClose();
     };
 
@@ -54,7 +55,7 @@ const City = ({user, setUser}) => {
     )
 };
 
-export default function NavbarProf({user, setUser}) {
+export default function NavbarProf({user, setUser, post, setPost}) {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -82,7 +83,7 @@ export default function NavbarProf({user, setUser}) {
             </div>
             <div className="postflex">
                 <img src={Post} onClick={handleClickOpen} alt="post" width="45" height="55" />
-                <PostDialog user={user} open={open} onClose={handleClose} />
+                <PostDialog user={user} open={open} onClose={handleClose} post={post} setPost={setPost} />
             </div>
             <div className="logoutflex">
                 <img

@@ -5,7 +5,7 @@ import {Message} from "../Mainfeed/Mainfeed";
 import Aboutmebox from "./About/about";
 import axios from "axios";
 
-export default function Profilecontent({user}) {
+export default function Profilecontent({user, post}) {
     const [userPosts, setUserPosts] = useState([]);
 
     useEffect(() => {
@@ -13,17 +13,14 @@ export default function Profilecontent({user}) {
             try {
                 const secret_token = user.token;
                 const res = await axios.get(
-                    `/post${secret_token ? "?secret_token=" + secret_token : ""}&q=author&v=${
-                        user.username
-                    }`
-                );
+                    `${process.env.REACT_APP_BACKEND}/post${secret_token ? "?secret_token=" + secret_token : ""}&q=author&v=${user.username}`);
                 setUserPosts(res.data.response);
             } catch (err) {
                 console.log(err);
             }
         };
         getUserPosts();
-    }, [user]);
+    }, [user, post]);
 
     return (
         <div className="Profile">

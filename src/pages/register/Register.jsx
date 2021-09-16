@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import "./register.css";
 
-export default function Register({user, setUser}) {
+export default function Register({ setUser }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [checkPassword, setCheckPassword] = useState("");
@@ -10,9 +10,9 @@ export default function Register({user, setUser}) {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("user/register", { username, password, checkPassword });
+            const res = await axios.post(`${process.env.REACT_APP_BACKEND}/user/register`, { username, password, checkPassword });
             if (res.data.response === "registered successfully") {
-                const res = await axios.post("user/login", { username, password });
+                const res = await axios.post(`${process.env.REACT_APP_BACKEND}/user/login`, { username, password });
                 const data = res.data;
                 setUser(data);
             }
