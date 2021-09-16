@@ -27,7 +27,23 @@ body {
      align-content: space-around;
    
  }
- 
+
+ .Slider{
+    text-decoration: none;
+    border: solid 5px rgb(16, 110, 123);
+    border-radius: 20px;
+    background-color:  #2c9aae;
+    outline: none;
+    padding: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-top:10px;
+    color:#BEE2EB;
+    font-size: large;
+    font-weight: 800;
+
+
+
+}
  .Backtomainflex{
   margin: 5px;
  }

@@ -10,7 +10,6 @@ import Logout from "./Navbarcomponents/Logout.png";
 import {Link} from "react-router-dom";
 import axios from "axios";
 
-
 const PostDialog = ({open, onClose, user, post, setPost}) => {
     const handleClose = () => {
         onClose();

@@ -2,6 +2,7 @@ import "./Mainfeed.css";
 import Sayhi from "./mainpagepictures/sayhi.png";
 import RandomPicture from "./randompic";
 
+
 const NameDisplay = ({ author }) => {
     return <p>{author}</p>;
 };
@@ -21,9 +22,10 @@ const Message = ({ content, city, date }) => {
     );
 };
 
-export default function Mainfeed({ post }) {
+    
+export default function Mainfeed({ post,user}) {
     return (
-        <div className="Mainfeed">
+<div className="Mainfeed"> 
             <div className="Mainleft">
                 <div className="Banner">
                     <img src={Sayhi} alt="banner" />
@@ -32,8 +34,13 @@ export default function Mainfeed({ post }) {
                     <NameDisplay author={post.author} />
                 </div>
                 <RandomPicture />
-            </div>
+            </div>  
+            
                 <div className="Newsfeed"> 
+                <div className="Greeting">
+                 
+                </div>
+
                 <div className = "Contentflex">
                  <div className="Content">    
                   <div className="TopDetails">
