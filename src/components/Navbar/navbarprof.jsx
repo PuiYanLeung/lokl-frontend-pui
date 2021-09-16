@@ -1,16 +1,16 @@
 import React from "react";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import {useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 import "./Navbar.css";
 import Logo from "./Navbarcomponents/Logo.png";
 import Home from "./Navbarcomponents/home.png";
 import Post from "./Navbarcomponents/Post.png";
 import Logout from "./Navbarcomponents/Logout.png";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
-const PostDialog = ({open, onClose, user}) => {
+const PostDialog = ({ open, onClose, user, post, setPost }) => {
     const handleClose = () => {
         onClose();
     };
@@ -18,15 +18,21 @@ const PostDialog = ({open, onClose, user}) => {
     const {
         register,
         handleSubmit,
-        formState: {errors},
+        formState: { errors },
     } = useForm();
 
     const onSubmit = async (data) => {
-        await axios.post(`/post${user.token ? "?secret_token=" + user.token : ""}`, {
-            city: user.city,
-            author: user.username,
-            content: data.content,
-        });
+        await axios.post(
+            `${process.env.REACT_APP_BACKEND}/post${
+                user.token ? "?secret_token=" + user.token : ""
+            }`,
+            {
+                city: user.city,
+                author: user.username,
+                content: data.content,
+            }
+        );
+        setPost(post + 1);
         handleClose();
     };
 
@@ -34,16 +40,21 @@ const PostDialog = ({open, onClose, user}) => {
 
     return (
         <Dialog onClose={handleClose} open={open}>
-            <DialogTitle>Create new post</DialogTitle>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <textarea {...register("content", {required: true})} />
-                <input type="submit" />
-            </form>
+            <div className="Postbox">
+                <DialogTitle>Create new post</DialogTitle>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <textarea
+                        className="DialogTextArea"
+                        {...register("content", { required: true })}
+                    />
+                    <input className="DialogBttn" type="submit" value="Add" />
+                </form>
+            </div>
         </Dialog>
     );
 };
 
-const City = ({user, setUser}) => {
+const City = ({ user, setUser }) => {
     return (
         <div>
             <select className="Slider" value={user.city} onChange={(selection) => {setUser({...user, city: selection.target.value})}}>
@@ -51,10 +62,10 @@ const City = ({user, setUser}) => {
                 <option value="Manchester">Manchester</option>
             </select>
         </div>
-    )
+    );
 };
 
-export default function NavbarProf({user, setUser}) {
+export default function NavbarProf({ user, setUser, post, setPost }) {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -72,7 +83,7 @@ export default function NavbarProf({user, setUser}) {
                     <img src={Logo} alt="logo" width="280" height="105" />
                 </Link>
                 <div className="city">
-                <City user={user} setUser={setUser} />
+                    <City user={user} setUser={setUser} />
                 </div>
             </div>
             <div className="Backtomainflex">
@@ -81,8 +92,20 @@ export default function NavbarProf({user, setUser}) {
                 </Link>
             </div>
             <div className="postflex">
-                <img src={Post} onClick={handleClickOpen} alt="post" width="45" height="55" />
-                <PostDialog user={user} open={open} onClose={handleClose} />
+                <img
+                    src={Post}
+                    onClick={handleClickOpen}
+                    alt="post"
+                    width="45"
+                    height="55"
+                />
+                <PostDialog
+                    user={user}
+                    open={open}
+                    onClose={handleClose}
+                    post={post}
+                    setPost={setPost}
+                />
             </div>
             <div className="logoutflex">
                 <img

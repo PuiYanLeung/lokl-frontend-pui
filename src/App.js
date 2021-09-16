@@ -28,7 +28,7 @@ function App() {
                     {user ? <Home user = {user} setUser = {setUser} post={post} setPost={setPost} /> : <Redirect to="/login" />}
                 </Route>
                 <Route path="/profile">
-                    {user ? <Profile user = {user} setUser = {setUser} /> : <Redirect to="/login" />}                    
+                    {user ? <Profile user = {user} setUser = {setUser} post={post} setPost={setPost} /> : <Redirect to="/login" />}                    
                 </Route>
             </Switch>
         </Router>
