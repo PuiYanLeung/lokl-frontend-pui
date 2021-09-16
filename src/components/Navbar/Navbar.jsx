@@ -34,11 +34,13 @@ const PostDialog = ({open, onClose, user}) => {
 
     return (
         <Dialog onClose={handleClose} open={open}>
+        <div className="Postbox">
             <DialogTitle>Create new post in {user.city}</DialogTitle>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <textarea {...register("content", {required: true})} />
                 <input type="submit" />
             </form>
+            </div>
         </Dialog>
     );
 };
