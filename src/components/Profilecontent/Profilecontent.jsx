@@ -51,7 +51,8 @@ export default function Profilecontent({user}) {
                         .slice(0)
                         .reverse()
                         .map((p, i) => (
-                            <div className="Message2">
+                            <div  className="Message1">
+                            <div key={i} className="Message2">
                                 <div className="Newsfeed">
                                     <Message
                                         author={p.author}
