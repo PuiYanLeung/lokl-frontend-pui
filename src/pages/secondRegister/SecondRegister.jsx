@@ -13,7 +13,8 @@ export default function SecondRegister({ user }) {
     ];
     const history = useHistory();
 
-    const handleMore = async () => {
+    const handleMore = async (e) => {
+        e.preventDefault();
         try {
             const secret_token = user.token;
             const _id = user._id

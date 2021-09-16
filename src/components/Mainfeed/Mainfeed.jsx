@@ -1,7 +1,7 @@
+import ButtonPanel from "./ButtonPanel";
 import "./Mainfeed.css";
 import Sayhi from "./mainpagepictures/sayhi.png";
 import RandomPicture from "./randompic";
-
 
 const NameDisplay = ({ author }) => {
     return <p>{author}</p>;
@@ -13,17 +13,19 @@ const Message = ({ content, city, date }) => {
         month: "long",
         day: "numeric",
     });
+
     return (
         <>
-            <p>{city}</p>
+            {city && <p>{city}</p>}
             {date && <p>{format_date}</p>}
-            <p>{content}</p>
+            {content && <p>{content}</p>}
         </>
     );
 };
 
     
-export default function Mainfeed({ post,user}) {
+export default function Mainfeed({ post, user }) {
+
     return (
 <div className="Mainfeed"> 
             <div className="Mainleft">
@@ -44,10 +46,11 @@ export default function Mainfeed({ post,user}) {
                 <div className = "Contentflex">
                  <div className="Content">    
                   <div className="TopDetails">
-                    <Message city={post.city} date={post.date} />
+                    <ButtonPanel post={post} user={user}/>
+                    <Message city={post.city} date={post.date}/>
                     </div>
                 <div className="contentP">
-                    <Message content={post.content} />
+                    <Message content={post.content} bttnshow={false} />
                     </div>
 </div>
                 </div>
