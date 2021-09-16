@@ -39,10 +39,8 @@ export default function Profilecontent({user}) {
                     <h3>Hello, {user.username}!</h3>
                 </div>
 
-
-                
                 <div className="About">
-                <h3> About me</h3>
+                    <h3> About me</h3>
                     <Aboutmebox />
                 </div>
                 <div className="Posthistory">
@@ -51,7 +49,6 @@ export default function Profilecontent({user}) {
                         .slice(0)
                         .reverse()
                         .map((p, i) => (
-                            <div  className="Message1">
                             <div key={i} className="Message2">
                                 <div className="Newsfeed">
                                     <Message
@@ -63,7 +60,6 @@ export default function Profilecontent({user}) {
                                 </div>
                             </div>
                         ))}
-                        
                 </div>
             </div>
         </div>
