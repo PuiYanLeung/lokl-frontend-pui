@@ -11,12 +11,15 @@
     "axios": "^0.21.4",
     "dotenv": "^10.0.0",
     "http-proxy-middleware": "^2.0.1",
+    "javascript-time-ago": "^2.3.8",
+    "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.15.3",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
     "react-select": "^4.3.1",
+    "react-time-ago": "^7.1.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
