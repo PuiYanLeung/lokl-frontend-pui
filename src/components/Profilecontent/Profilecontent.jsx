@@ -3,8 +3,6 @@ import "./profilecontent.css";
 import Profileguy from "./Profileguy.png";
 import {Message} from "../Mainfeed/Mainfeed";
 import Aboutmebox from "./About/about";
-import {PostAddSharp} from "@material-ui/icons";
-import Mainfeed from "../Mainfeed/Mainfeed";
 import axios from "axios";
 
 export default function Profilecontent({user}) {
@@ -25,7 +23,7 @@ export default function Profilecontent({user}) {
             }
         };
         getUserPosts();
-    }, []);
+    }, [user]);
 
     return (
         <div className="Profile">
@@ -39,10 +37,8 @@ export default function Profilecontent({user}) {
                     <h3>Hello, {user.username}!</h3>
                 </div>
 
-
-                
                 <div className="About">
-                <h3> About me</h3>
+                    <h3> About me</h3>
                     <Aboutmebox />
                 </div>
                 <div className="Posthistory">
@@ -51,7 +47,7 @@ export default function Profilecontent({user}) {
                         .slice(0)
                         .reverse()
                         .map((p, i) => (
-                            <div className="Message2">
+                            <div key={i} className="Message2">
                                 <div className="Newsfeed">
                                     <Message
                                         author={p.author}
@@ -62,7 +58,6 @@ export default function Profilecontent({user}) {
                                 </div>
                             </div>
                         ))}
-                        
                 </div>
             </div>
         </div>

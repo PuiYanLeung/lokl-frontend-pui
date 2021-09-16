@@ -10,7 +10,7 @@ import Logout from "./Navbarcomponents/Logout.png";
 import {Link} from "react-router-dom";
 import axios from "axios";
 
-const PostDialog = ({open, onClose, user}) => {
+const PostDialog = ({open, onClose, user, post, setPost}) => {
     const handleClose = () => {
         onClose();
     };
@@ -27,6 +27,7 @@ const PostDialog = ({open, onClose, user}) => {
             author: user.username,
             content: data.content,
         });
+        setPost(post + 1);
         handleClose();
     };
 
@@ -45,11 +46,18 @@ const PostDialog = ({open, onClose, user}) => {
     );
 };
 
-const City = ({city}) => {
-    return city;
+const City = ({user, setUser}) => {
+    return (
+        <div>
+            <select value={user.city} onChange={(selection) => {setUser({...user, city: selection.target.value})}}>
+                <option value="Liverpool">Liverpool</option>
+                <option value="Manchester">Manchester</option>
+            </select>
+        </div>
+    )
 };
 
-export default function Navbar({user, setUser}) {
+export default function Navbar({user, setUser, post, setPost}) {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -67,7 +75,7 @@ export default function Navbar({user, setUser}) {
                     <img src={Logo} alt="logo" width="280" height="105" />
                 </Link>
                 <div className="city">
-                    <City city={user.city} />
+                    <City user={user} setUser={setUser} />
                 </div>
             </div>
             <div className="profileflex">
@@ -77,7 +85,7 @@ export default function Navbar({user, setUser}) {
             </div>
             <div className="postflex">
                 <img src={Post} onClick={handleClickOpen} alt="post" width="45" height="55" />
-                <PostDialog user={user} open={open} onClose={handleClose} />
+                <PostDialog user={user} open={open} onClose={handleClose} post={post} setPost={setPost} />
             </div>
             <div className="logoutflex">
                 <img

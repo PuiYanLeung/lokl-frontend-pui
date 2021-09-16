@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita:ital,wght@1,400;1,700&display=swap');
 body {
     margin: 0; 
  }
@@ -56,6 +57,7 @@ body {
      flex-direction: column;
      color:#18525c
  }
+
  .Content{
   
     display: flex;
