@@ -5,14 +5,15 @@ body {
 
  .Mainfeed {
     background-color:#BEE2EB;
-     margin: 3%;
+     margin: 2%;
     display:flex;
-    padding: 5px;
-    justify-content: space-between;
+    padding: 40px;
+    justify-content: space-evenly;
     border-radius: 4%;
     border-color:#329EB2;
     border-style: solid;
     flex-wrap: wrap;
+   
  } 
  .Messagebox{
      display: flex;
@@ -20,27 +21,9 @@ body {
      align-content: space-between;
      flex-wrap: wrap;
     
+    
  }
- .Message1 {
-     display: flex;
-    background-color:#ffffff;
-    padding: 30px;
-    max-height: 45vh;
-    max-width: 40vw;
-    border-radius: 10%;
-    border-color: #267e8d;
-    border-style: solid;
-    border-width:3px ;
-    margin-bottom: 5px;
-    flex: 1 0 auto;
-    height: auto;
-    flex-wrap: wrap;
- }
-.Message1:before{
-   content: '';
-   display: block;
-   padding-top: 80%;
-}
+
  .Mainleft{
      display: flex;
      flex-direction: column;
@@ -75,4 +58,43 @@ body {
      color:#18525c
  }
 
-
+ .Content{
+  
+    display: flex;
+  flex-direction: column;
+    background-color:#ffffff;
+    padding: 80px;
+    max-height: 90vh;
+    max-width: 50vw;
+    border-radius: 2%;
+    border-color: #267e8d;
+    border-style: solid;
+    border-width:3px ;
+    margin-bottom: 5px;
+    flex: 1 0 auto;
+    height: auto;
+    flex-wrap: wrap;
+ }
+ .Contentflex{
+     display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+     justify-content: center;
+ } 
+.TopDetails{
+    color: #18525c;
+    display: flex;
+    padding: 10px;  
+     flex-direction: column;
+}
+.contentP{
+    display: flex;
+   
+  
+    padding: 55px;
+    max-width: 90%;
+    margin: 5px;
+    /* border: 1px solid #b5dae38a;
+    background-color:#67bfdc46;  
+    border-radius: 3px; */
+}

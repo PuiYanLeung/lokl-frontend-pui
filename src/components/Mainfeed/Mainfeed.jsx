@@ -6,7 +6,7 @@ const NameDisplay = ({ author }) => {
     return <p>{author}</p>;
 };
 
-const Message = ({ author, content, city, date }) => {
+const Message = ({ content, city, date }) => {
     const format_date = new Date(date).toLocaleDateString("en-gb", {
         year: "numeric",
         month: "long",
@@ -33,15 +33,16 @@ export default function Mainfeed({ post }) {
                 </div>
                 <RandomPicture />
             </div>
-            <div className="Message1">
-                <div className="Newsfeed">
-                    <Message
-                        author={post.author}
-                        city={post.city}
-                        date={post.date}
-                        content={post.content}
-                    />
-                    {/* <Message content={post.content} /> */}
+                <div className="Newsfeed"> 
+                <div className = "Contentflex">
+                 <div className="Content">    
+                  <div className="TopDetails">
+                    <Message city={post.city} date={post.date} />
+                    </div>
+                <div className="contentP">
+                    <Message content={post.content} />
+                    </div>
+</div>
                 </div>
             </div>
         </div>
