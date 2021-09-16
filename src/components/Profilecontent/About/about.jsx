@@ -22,12 +22,13 @@ const Aboutmebox = ({ user, setUser }) => {
     const onSubmit = async (data) => {
         await axios.put(`${process.env.REACT_APP_BACKEND}/user${user.token ? "?secret_token=" + user.token : ""}`, {
             "_id": user._id,
+            "property": "about",
             "content": data.content,
         });
 
         const updatedUserAbout = await axios.get(`${process.env.REACT_APP_BACKEND}/user${user.token ? "?secret_token=" + user.token + "&_id=" + user._id : ""}`);
         setUser({...user, about: updatedUserAbout});
-        setEditMode(false);
+        changeEditMode();
     };
 
     console.log(errors);
@@ -36,7 +37,7 @@ const Aboutmebox = ({ user, setUser }) => {
         return (
             <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <input className="input" type="text" value={user.about} {...register("content", {})} />
+                    <input className="input" type="text" placeholder={user.about} {...register("content", {})} />
                     <div className="xbutton">
                         <img
                             src={Xbt}
