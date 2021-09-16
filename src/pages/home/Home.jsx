@@ -10,9 +10,7 @@ export default function Home({user, setUser, post, setPost}) {
         const getPosts = async () => {
             try {
                 const secret_token = user.token;
-                const res = await axios.get(
-                    `/post${secret_token ? "?secret_token=" + secret_token : ""}&q=city&v=${user.city}`
-                );
+                const res = await axios.get(`${process.env.REACT_APP_BACKEND}/post${secret_token ? "?secret_token=" + secret_token : ""}&q=city&v=${user.city}`);
                 setPosts(res.data.response);
             } catch (err) {
                 console.log(err);

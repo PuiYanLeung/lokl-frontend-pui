@@ -3,13 +3,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-export default function Login({user, setUser}) {
+export default function Login({ setUser }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const login = async(e) =>{
         e.preventDefault();
-        const res = await axios.post("user/login", {username, password});
+        const res = await axios.post(`${process.env.REACT_APP_BACKEND}/user/login`, {username, password});
         const data = res.data;
         setUser(data);
     };

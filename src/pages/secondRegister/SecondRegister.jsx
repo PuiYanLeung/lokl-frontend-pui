@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import Select from "react-select";
 import "./secondregister.css";
 
-export default function SecondRegister({user, setUser}) {
+export default function SecondRegister({ user }) {
     const [email, setEmail] = useState("");
     const [city, setCity] = useState("");
     const options = [
@@ -13,11 +13,11 @@ export default function SecondRegister({user, setUser}) {
     ];
     const history = useHistory();
 
-    const handleMore = async ( ) => {
+    const handleMore = async () => {
         try {
             const secret_token = user.token;
             const _id = user._id
-            const res = await axios.put(`user/editreg${secret_token ? "?secret_token=" + secret_token : ""}`, { _id, email, city });
+            const res = await axios.put(`${process.env.REACT_APP_BACKEND}/user/editreg${secret_token ? "?secret_token=" + secret_token : ""}`, { _id, email, city });
             if(res.data.response === "User updated"){
                 user.city = city;
                 user.email = email;

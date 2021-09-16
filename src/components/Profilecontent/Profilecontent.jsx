@@ -13,10 +13,7 @@ export default function Profilecontent({user, post}) {
             try {
                 const secret_token = user.token;
                 const res = await axios.get(
-                    `/post${secret_token ? "?secret_token=" + secret_token : ""}&q=author&v=${
-                        user.username
-                    }`
-                );
+                    `${process.env.REACT_APP_BACKEND}/post${secret_token ? "?secret_token=" + secret_token : ""}&q=author&v=${user.username}`);
                 setUserPosts(res.data.response);
             } catch (err) {
                 console.log(err);

@@ -22,7 +22,7 @@ const PostDialog = ({open, onClose, user, post, setPost}) => {
     } = useForm();
 
     const onSubmit = async (data) => {
-        await axios.post(`/post${user.token ? "?secret_token=" + user.token : ""}`, {
+        await axios.post(`${process.env.REACT_APP_BACKEND}/post${user.token ? "?secret_token=" + user.token : ""}`, {
             city: user.city,
             author: user.username,
             content: data.content,
