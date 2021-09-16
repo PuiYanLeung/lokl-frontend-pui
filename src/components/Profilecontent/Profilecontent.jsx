@@ -5,7 +5,7 @@ import {Message} from "../Mainfeed/Mainfeed";
 import Aboutmebox from "./About/about";
 import axios from "axios";
 
-export default function Profilecontent({user, post}) {
+export default function Profilecontent({user, setUser, post}) {
     const [userPosts, setUserPosts] = useState([]);
 
     useEffect(() => {
@@ -36,7 +36,7 @@ export default function Profilecontent({user, post}) {
 
                 <div className="About">
                     <h3> About me</h3>
-                    <Aboutmebox />
+                    <Aboutmebox user={user} setUser={setUser} />
                 </div>
                 <div className="Posthistory">
                     <h3>Post History</h3>
