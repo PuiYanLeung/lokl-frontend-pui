@@ -9,7 +9,8 @@ import { useState } from "react";
 
 
 function App() {
-    const [ user, setUser ]  = useState(null);
+    const [ user, setUser ] = useState(null);
+    const [ post, setPost ] = useState(0);
 
     return (
         <Router>
@@ -24,7 +25,7 @@ function App() {
                     {user ? <SecondRegister user = {user} setUser = {setUser}/> : <Redirect to="/Register" />}
                 </Route>
                 <Route exact path="/">
-                    {user ? <Home user = {user} setUser = {setUser}/> : <Redirect to="/login" />}
+                    {user ? <Home user = {user} setUser = {setUser} post={post} setPost={setPost} /> : <Redirect to="/login" />}
                 </Route>
                 <Route path="/profile">
                     {user ? <Profile user = {user} setUser = {setUser} /> : <Redirect to="/login" />}                    

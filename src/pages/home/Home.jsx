@@ -1,10 +1,9 @@
 import Mainfeed from "../../components/Mainfeed/Mainfeed";
 import Navbar from "../../components/Navbar/Navbar";
-import Filler from "../../components/Mainfeed/Mainfiller";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-export default function Home({user, setUser}) {
+export default function Home({user, setUser, post, setPost}) {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
@@ -20,11 +19,11 @@ export default function Home({user, setUser}) {
             }
         };
         getPosts();
-    }, []);
+    }, [user, post]);
 
     return (
         <div>
-            <Navbar user={user} setUser={setUser} />
+            <Navbar user={user} setUser={setUser} post={post} setPost={setPost} />
             {posts.slice(0).reverse().map((p, i) => (
                 <Mainfeed key={i} post={p} />
             ))}
