@@ -20,14 +20,24 @@ const Aboutmebox = ({ user, setUser }) => {
     };
 
     const onSubmit = async (data) => {
-        await axios.put(`${process.env.REACT_APP_BACKEND}/user${user.token ? "?secret_token=" + user.token : ""}`, {
+        console.log( {
             "_id": user._id,
             "property": "about",
             "content": data.content,
         });
 
-        const updatedUserAbout = await axios.get(`${process.env.REACT_APP_BACKEND}/user${user.token ? "?secret_token=" + user.token + "&_id=" + user._id : ""}`);
-        setUser({...user, about: updatedUserAbout});
+        const res = await axios.put(`${process.env.REACT_APP_BACKEND}/user${user.token ? "?secret_token=" + user.token : ""}`, {
+            "_id": user._id,
+            "property": "about",
+            "update": data.content,
+        });
+
+        if (res.data.response === "User updated") {
+            // const updatedUserAbout = await axios.get(`${process.env.REACT_APP_BACKEND}/user${user.token ? "?secret_token=" + user.token + "&_id=" + user._id: ""}`);
+            //setUser({...user, about: updatedUserAbout});
+            user.about = data.content;
+        }
+  
         changeEditMode();
     };
 
