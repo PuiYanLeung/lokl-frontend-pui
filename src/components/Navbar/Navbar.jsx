@@ -35,12 +35,12 @@ const PostDialog = ({open, onClose, user, post, setPost}) => {
     console.log(errors);
 
     return (
-        <Dialog onClose={handleClose} open={open}>
+        <Dialog className="DialogBox" onClose={handleClose} open={open}>
         <div className="Postbox">
             <DialogTitle>Create new post in {user.city}</DialogTitle>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <textarea {...register("content", {required: true})} />
-                <input type="submit" />
+                <textarea className="DialogTextArea" {...register("content", {required: true})} />
+                <input className="DialogBttn" type="submit" value="Add"/>
             </form>
             </div>
         </Dialog>
