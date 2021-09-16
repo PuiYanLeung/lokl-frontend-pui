@@ -46,7 +46,7 @@ const PostDialog = ({open, onClose, user}) => {
 const City = ({user, setUser}) => {
     return (
         <div>
-            <select value={user.city} onChange={(selection) => {setUser({...user, city: selection.target.value})}}>
+            <select className="Slider" value={user.city} onChange={(selection) => {setUser({...user, city: selection.target.value})}}>
                 <option value="Liverpool">Liverpool</option>
                 <option value="Manchester">Manchester</option>
             </select>
