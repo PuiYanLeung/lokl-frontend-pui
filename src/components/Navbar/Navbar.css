@@ -39,6 +39,14 @@ body {
     margin-top: 10px;
     margin-left: 10px;
 }
+
+.Postbox{
+    background-color:#BEE2EB;
+    border-style: solid;
+    border-color:#329EB2 ;
+    padding: 10px;
+ }
+
 .logoutflex:hover{
 transform: scale(1.05);
 } 
