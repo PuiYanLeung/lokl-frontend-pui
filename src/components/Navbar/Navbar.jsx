@@ -43,8 +43,15 @@ const PostDialog = ({open, onClose, user}) => {
     );
 };
 
-const City = ({city}) => {
-    return city;
+const City = ({user, setUser}) => {
+    return (
+        <div>
+            <select value={user.city} onChange={(selection) => {setUser({...user, city: selection.target.value})}}>
+                <option value="Liverpool">Liverpool</option>
+                <option value="Manchester">Manchester</option>
+            </select>
+        </div>
+    )
 };
 
 export default function Navbar({user, setUser}) {
@@ -65,7 +72,7 @@ export default function Navbar({user, setUser}) {
                     <img src={Logo} alt="logo" width="280" height="105" />
                 </Link>
                 <div className="city">
-                    <City city={user.city} />
+                    <City user={user} setUser={setUser} />
                 </div>
             </div>
             <div className="profileflex">
