@@ -8,14 +8,11 @@ body {
  }
 .Profile{
     display: flex;
-    justify-content: space-between; 
     flex:stretch;
     flex-wrap: wrap;
-     background-color: white;
-     align-items: center;
+     background-color: #eeeded ;
      font-family: 'Sansita', sans-serif;
-  
-
+     align-items: center;
 }
 p{
     font-family: 'Sansita', sans-serif;
@@ -30,67 +27,51 @@ margin-bottom: 20px;
 }
 .ProfilePic{
      background-color:#eeeded ;
+     align-self:flex-start;
+   
+    
 }
 .ProfileContent{
     margin:10px;
+    margin-left: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color:white;
     max-height: 100%;
     flex-grow: 1;
+    align-items: center;
 }
-.Posthistory{
-    background-color:#BEE2EB;
-    border-radius: 20%;
-    border-style: solid;
-    border-color:#329EB2 ;
-    margin:20px;
-    margin-left:50px;
-    padding: 100px;
-    width: 290px;
-    height: 110px;
-    flex-grow: 2 ;   
+
+
+
+
+.Message2 {
   
 
-}
-
-.About{
-    background-color:#BEE2EB;
-    border-radius: 20%;
-    padding: 100px;
-    width: 270px;
-    height: 150px;
-    margin-left:80px;    
-    font-family: 'Sansita', sans-serif;
-  flex-wrap: wrap;
-
-}
-
-.Message1 {
-    display: flex;
-   background-color:#ffffff;
-   padding: 30px;
-   max-height: 45vh;
-   max-width: 40vw;
-   border-radius: 10%;
-   border-color: #267e8d;
+   background-color:#BEE2EB;
+   border-radius: 20%;
    border-style: solid;
-   border-width:3px ;
-   margin-bottom: 5px;
-   flex: 1 0 auto;
-   height: auto;
-   flex-wrap: wrap;
+   border-color:#329EB2 ;
+   margin:20px;
+   margin-left:50px;
+   padding: 100px;
+   width: 290px;
+   height: 110px;
+   flex-grow: 2 ;
+   align-self: center;
 }
-.Message1:before{
-  content: '';
-  display: block;
-  padding-top: 80%;
-}
+
 
 .Newsfeed{
     display: flex;
     flex-direction: column;
-    color:#18525c
+    color:#18525c;
+    align-self: center;
+    align-items: center;
 }
 
+.ContentinProfile{
+    display: flex;
+    align-self: center;
+}
