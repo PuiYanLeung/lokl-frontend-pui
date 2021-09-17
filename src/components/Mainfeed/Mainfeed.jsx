@@ -46,11 +46,12 @@ export default function Mainfeed({ postitem, user, post, setPost }) {
                 <div className = "Contentflex">
                  <div className="Content">    
                   <div className="TopDetails">
-                    <ButtonPanel postitem={postitem} user={user} post={post} setPost={setPost}/>
+                   
                     <Message city={postitem.city} date={postitem.date}/>
                     </div>
                 <div className="contentP">
-                    <Message content={postitem.content} />
+                    <Message content={postitem.content} /> 
+                    <ButtonPanel postitem={postitem} user={user} post={post} setPost={setPost}/>
                     </div>
 </div>
                 </div>

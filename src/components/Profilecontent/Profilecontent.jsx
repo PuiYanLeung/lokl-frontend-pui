@@ -6,7 +6,8 @@ import Aboutmebox from "./About/about";
 import axios from "axios";
 import ButtonPanel from "../Mainfeed/ButtonPanel";
 
-export default function Profilecontent({user, post, setPost}) {
+export default function Profilecontent({user, setUser, post, setPost}) {
+
     const [userPosts, setUserPosts] = useState([]);
 
     useEffect(() => {

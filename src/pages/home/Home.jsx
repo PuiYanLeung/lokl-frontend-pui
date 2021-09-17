@@ -17,6 +17,7 @@ export default function Home({user, setUser, post, setPost}) {
             }
         };
         getPosts();
+        console.log(user);
     }, [user, post]);
 
     return (
