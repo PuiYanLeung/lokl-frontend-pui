@@ -6,7 +6,8 @@ import Aboutmebox from "./About/about";
 import axios from "axios";
 import ButtonPanel from "../Mainfeed/ButtonPanel";
 
-export default function Profilecontent({user, post, setPost}) {
+export default function Profilecontent({user, setUser, post, setPost}) {
+
     const [userPosts, setUserPosts] = useState([]);
 
     useEffect(() => {
@@ -36,7 +37,7 @@ export default function Profilecontent({user, post, setPost}) {
 
                 <div className="About">
                     <h3> About me</h3>
-                    <Aboutmebox />
+                    <Aboutmebox user={user} setUser={setUser} />
                 </div>
                 <div className="Posthistory">
                     <h3>Post History</h3>
