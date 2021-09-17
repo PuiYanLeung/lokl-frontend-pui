@@ -27,14 +27,13 @@ class Aboutmebox extends Component{
          <input
          className="input"
          type="text"
-         defaultValue={this.state.value}
+         defaultValue={this.props.aboutmsg ? this.props.aboutmsg : this.state.value}
          ref="theTextInput"
          />
          <div className="xbutton"> <img src={Xbt} alt="xBUTTON" width="25px" height="35px" onClick={this.changeEditMode}/></div>
          <div className="okbtn"> <img src={ok} alt="okBUTTON" width="28px" height="32px" onClick={this.updateComponentValue}/></div>
 
-       
-
+    
      </div>
  }
 
@@ -42,7 +41,7 @@ class Aboutmebox extends Component{
  renderDefaultView =() =>{
      return  <div>
      <div className="editbutton"> <img src={EditButton} alt="EDITBUTTON" width="33px" height="38px"onClick={this.changeEditMode} /></div>
-     <div className="Value">{this.state.value}</div>
+     <div className="Value">{this.props.aboutmsg ? this.props.aboutmsg : this.state.value}</div>
      </div>
  }
  render() {
