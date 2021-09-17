@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import "./ButtonPage.css";
 export default function ButtonPanel ({ postitem, user, post, setPost }) {
     let bttnshow = false;
 
