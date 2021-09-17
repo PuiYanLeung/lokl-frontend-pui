@@ -160,6 +160,10 @@
       border-style:none;
       background-color: rgba(249, 249, 250, 0.85);
       outline: none;
+      color: #1f6a79;
+      font-weight: 600;
+      font-size: large;
+      align-self: center;
         }
   .loginRegisterButton{
     cursor: pointer;
