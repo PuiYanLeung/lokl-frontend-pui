@@ -24,7 +24,7 @@ export default function Home({user, setUser, post, setPost}) {
             <Navbar user={user} setUser={setUser} post={post} setPost={setPost} />
             <h3>Hello, {user.username}!</h3>;
             {posts.slice(0).reverse().map((p, i) => (
-                <Mainfeed key={i} post={p} user={user} />
+                <Mainfeed key={i} postitem={p} user={user} post={post} setPost={setPost}/>
             ))}
         </div>
     );

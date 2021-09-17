@@ -1,11 +1,9 @@
 import axios from "axios";
-import { useHistory } from "react-router-dom";
 
-export default function ButtonPanel ({ post, user }) {
-    const history = useHistory();
+export default function ButtonPanel ({ postitem, user, post, setPost }) {
     let bttnshow = false;
 
-    if (user.username === post.author){
+    if (user.username === postitem.author){
         bttnshow = true;
     }else{
         bttnshow = false;
@@ -14,17 +12,9 @@ export default function ButtonPanel ({ post, user }) {
     const handleDelete = async (e) => {
         e.preventDefault();
         try {
-            const id = post._id;
-            console.log(user.token);
-            console.log(post._id);
-            const res = await axios.delete(`${process.env.REACT_APP_BACKEND}/post${user.token ? "?secret_token=" + user.token : ""}`, { data : {id} });
-            console.log(res.data);
-            if(res.data.response === "'Post deleted'"){
-                //done something
-
-                // const del = employees.filter(employee => id !== employee.id)
-                // setEmployees(del)
-            }
+            const id = postitem._id;
+            await axios.delete(`${process.env.REACT_APP_BACKEND}/post${user.token ? "?secret_token=" + user.token : ""}`, { data : {id} });
+            setPost(post+1);
         } catch (err) {}
     };
 

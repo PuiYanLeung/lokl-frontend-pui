@@ -24,7 +24,7 @@ const Message = ({ content, city, date }) => {
 };
 
     
-export default function Mainfeed({ post, user }) {
+export default function Mainfeed({ postitem, user, post, setPost }) {
 
     return (
 <div className="Mainfeed"> 
@@ -33,7 +33,7 @@ export default function Mainfeed({ post, user }) {
                     <img src={Sayhi} alt="banner" />
                 </div>
                 <div className="Name">
-                    <NameDisplay author={post.author} />
+                    <NameDisplay author={postitem.author} />
                 </div>
                 <RandomPicture />
             </div>  
@@ -46,11 +46,11 @@ export default function Mainfeed({ post, user }) {
                 <div className = "Contentflex">
                  <div className="Content">    
                   <div className="TopDetails">
-                    <ButtonPanel post={post} user={user}/>
-                    <Message city={post.city} date={post.date}/>
+                    <ButtonPanel postitem={postitem} user={user} post={post} setPost={setPost}/>
+                    <Message city={postitem.city} date={postitem.date}/>
                     </div>
                 <div className="contentP">
-                    <Message content={post.content} bttnshow={false} />
+                    <Message content={postitem.content} />
                     </div>
 </div>
                 </div>
