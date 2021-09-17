@@ -37,7 +37,7 @@ export default function Profilecontent({user, setUser, post, setPost}) {
 
                 <div className="About">
                     <h3> About me</h3>
-                    <Aboutmebox user={user} setUser={setUser} />
+                    <Aboutmebox aboutmsg={user.about}/>
                 </div>
                 <div className="Posthistory">
                     <h3>Post History</h3>

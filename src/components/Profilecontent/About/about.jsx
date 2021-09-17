@@ -1,90 +1,54 @@
-import React, {useState} from "react";
-import "./about.css";
-import EditButton from "./editbutton.png";
-import Xbt from "./X.png";
-import ok from "./OK.png";
-import {useForm} from "react-hook-form";
-import axios from "axios";
+import React, {Component} from 'react';
+import "./about.css"
+import EditButton from "./editbutton.png"
+import Xbt from "./X.png"
+import ok from "./OK.png"
 
-const Aboutmebox = ({ user, setUser }) => {
-    const [editMode, setEditMode] = useState(false);
+class Aboutmebox extends Component{
+ state ={
+     value:"About me!!",
+     isInEditMode: false
 
-    const {
-        register,
-        handleSubmit,
-        formState: {errors},
-    } = useForm();
+ }
+ changeEditMode = () => {
+     this.setState({
+            isInEditMode: !this.state.isInEditMode
+         })
+ }
 
-    const changeEditMode = () => {
-        setEditMode(!editMode);
-    };
+ updateComponentValue = () => {
+     this.setState({
+         isInEditMode: false,
+         value: this.refs.theTextInput.value
+     })
+ }
+ renderEditView = () => {
+     return <div>
+         <input
+         className="input"
+         type="text"
+         defaultValue={this.props.aboutmsg ? this.props.aboutmsg : this.state.value}
+         ref="theTextInput"
+         />
+         <div className="xbutton"> <img src={Xbt} alt="xBUTTON" width="25px" height="35px" onClick={this.changeEditMode}/></div>
+         <div className="okbtn"> <img src={ok} alt="okBUTTON" width="28px" height="32px" onClick={this.updateComponentValue}/></div>
 
-    const onSubmit = async (data) => {
-        console.log( {
-            "_id": user._id,
-            "property": "about",
-            "content": data.content,
-        });
+    
+     </div>
+ }
 
-        const res = await axios.put(`${process.env.REACT_APP_BACKEND}/user${user.token ? "?secret_token=" + user.token : ""}`, {
-            "_id": user._id,
-            "property": "about",
-            "update": data.content,
-        });
-
-        if (res.data.response === "User updated") {
-            // const updatedUserAbout = await axios.get(`${process.env.REACT_APP_BACKEND}/user${user.token ? "?secret_token=" + user.token + "&_id=" + user._id: ""}`);
-            //setUser({...user, about: updatedUserAbout});
-            user.about = data.content;
-        }
-  
-        changeEditMode();
-    };
-
-    console.log(errors);
-
-    if (editMode) {
-        return (
-            <div>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <input className="input" type="text" placeholder={user.about} {...register("content", {})} />
-                    <div className="xbutton">
-                        <img
-                            src={Xbt}
-                            alt="cancel"
-                            width="25px"
-                            height="35px"
-                            onClick={changeEditMode}
-                        />
-                    </div>
-                    <div className="okbtn">
-                        <input
-                            type="image"    
-                            src={ok}
-                            alt="submit"
-                            width="28px"
-                            height="32px"
-                        />
-                    </div>
-                </form>
-            </div>
-        );
-    } else {
-        return (
-            <div>
-                <div className="editbutton">
-                    <img
-                        src={EditButton}
-                        alt="edit"
-                        width="33px"
-                        height="38px"
-                        onClick={changeEditMode}
-                    />
-                </div>
-                <div className="Value">{user.about}</div>
-            </div>
-        );
-    }
-};
-
-export default Aboutmebox;
+ 
+ renderDefaultView =() =>{
+     return  <div>
+     <div className="editbutton"> <img src={EditButton} alt="EDITBUTTON" width="33px" height="38px"onClick={this.changeEditMode} /></div>
+     <div className="Value">{this.props.aboutmsg ? this.props.aboutmsg : this.state.value}</div>
+     </div>
+ }
+ render() {
+     return this.state.isInEditMode ?
+     this.renderEditView() :
+     this.renderDefaultView()
+    
+ }
+}
+export default Aboutmebox
