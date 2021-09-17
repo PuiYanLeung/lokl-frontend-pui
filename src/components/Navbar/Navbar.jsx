@@ -34,12 +34,12 @@ const PostDialog = ({open, onClose, user, post, setPost}) => {
     console.log(errors);
 
     return (
-        <Dialog onClose={handleClose} open={open}>
+        <Dialog className="DialogBox" onClose={handleClose} open={open}>
         <div className="Postbox">
             <DialogTitle>Create new post in {user.city}</DialogTitle>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <textarea {...register("content", {required: true})} />
-                <input type="submit" />
+                <textarea className="DialogTextArea" {...register("content", {required: true})} />
+                <input className="DialogBttn" type="submit" value="Add"/>
             </form>
             </div>
         </Dialog>
@@ -48,8 +48,8 @@ const PostDialog = ({open, onClose, user, post, setPost}) => {
 
 const City = ({user, setUser}) => {
     return (
-        <div>
-            <select value={user.city} onChange={(selection) => {setUser({...user, city: selection.target.value})}}>
+        <div >
+            <select className="Slider" value={user.city} onChange={(selection) => {setUser({...user, city: selection.target.value})}}>
                 <option value="Liverpool">Liverpool</option>
                 <option value="Manchester">Manchester</option>
             </select>
@@ -74,9 +74,11 @@ export default function Navbar({user, setUser, post, setPost}) {
                 <Link className="Logo" to="/">
                     <img src={Logo} alt="logo" width="280" height="105" />
                 </Link>
+                
                 <div className="city">
                     <City user={user} setUser={setUser} />
                 </div>
+                
             </div>
             <div className="profileflex">
                 <Link className="profileflex" to="/profile">

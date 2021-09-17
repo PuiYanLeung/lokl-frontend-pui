@@ -1,3 +1,4 @@
+import ButtonPanel from "./ButtonPanel";
 import "./Mainfeed.css";
 import Sayhi from "./mainpagepictures/sayhi.png";
 import RandomPicture from "./randompic";
@@ -12,35 +13,45 @@ const Message = ({ content, city, date }) => {
         month: "long",
         day: "numeric",
     });
+
     return (
         <>
-            <p>{city}</p>
-            <p>{format_date}</p>
-            <p>{content}</p>
+            {city && <p>{city}</p>}
+            {date && <p>{format_date}</p>}
+            {content && <p>{content}</p>}
         </>
     );
 };
 
-export default function Mainfeed({ post }) {
+    
+export default function Mainfeed({ postitem, user, post, setPost }) {
+
     return (
-        <div className="Mainfeed">
+<div className="Mainfeed"> 
             <div className="Mainleft">
                 <div className="Banner">
                     <img src={Sayhi} alt="banner" />
                 </div>
                 <div className="Name">
-                    <NameDisplay author={post.author} />
+                    <NameDisplay author={postitem.author} />
                 </div>
                 <RandomPicture />
-            </div>
+            </div>  
+            
                 <div className="Newsfeed"> 
+                <div className="Greeting">
+                 
+                </div>
+
                 <div className = "Contentflex">
                  <div className="Content">    
                   <div className="TopDetails">
-                    <Message city={post.city} date={post.date} />
+                   
+                    <Message city={postitem.city} date={postitem.date}/>
                     </div>
                 <div className="contentP">
-                    <Message content={post.content} />
+                    <Message content={postitem.content} /> 
+                    <ButtonPanel postitem={postitem} user={user} post={post} setPost={setPost}/>
                     </div>
 </div>
                 </div>

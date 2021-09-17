@@ -4,16 +4,17 @@ import Profileguy from "./Profileguy.png";
 import {Message} from "../Mainfeed/Mainfeed";
 import Aboutmebox from "./About/about";
 import axios from "axios";
+import ButtonPanel from "../Mainfeed/ButtonPanel";
 
-export default function Profilecontent({user, setUser, post}) {
+export default function Profilecontent({user, setUser, post, setPost}) {
+
     const [userPosts, setUserPosts] = useState([]);
 
     useEffect(() => {
         const getUserPosts = async () => {
             try {
                 const secret_token = user.token;
-                const res = await axios.get(
-                    `${process.env.REACT_APP_BACKEND}/post${secret_token ? "?secret_token=" + secret_token : ""}&q=author&v=${user.username}`);
+                const res = await axios.get(`${process.env.REACT_APP_BACKEND}/post${secret_token ? "?secret_token=" + secret_token : ""}&q=author&v=${user.username}`);
                 setUserPosts(res.data.response);
             } catch (err) {
                 console.log(err);
@@ -46,6 +47,7 @@ export default function Profilecontent({user, setUser, post}) {
                         .map((p, i) => (
                             <div key={i} className="Message2">
                                 <div className="Newsfeed">
+                                    <ButtonPanel postitem={p} user={user} post={post} setPost={setPost}/>
                                     <Message
                                         author={p.author}
                                         city={p.city}
